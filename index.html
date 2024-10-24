@@ -1,19 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <main>
-        <h1>Welcome to My Website</h1>  
-    </main>
-    <script src="index.js"></script>
-  </body>
-</html>
+    <title>Your Name - Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .pdf-container {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ccc;
+        }
+        .download-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .download-link a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .download-link a:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 768px) {
+            .pdf-container {
+                height: 600px;
+            }
+        }
+        @media (max-width: 480px) {
+            .pdf-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Professional Title | Contact Information</p>
+    </header>
 
+    <div class="container">
+        <h2>Resume</h2>
+        <div class="pdf-container">
+            <iframe src="resume.pdf" width="100%" height="100%" style="border: none;">
+                This browser does not support PDFs. Please download the resume to view it: 
+                <a href="resume.pdf">Download Resume</a>.
+            </iframe>
+        </div>
+        <div class="download-link">
+            <a href="resume.pdf" download>Download Resume</a>
+        </div>
+    </div>
+</body>
+</html>
 
