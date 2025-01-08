@@ -1,0 +1,17 @@
+# .github/workflows/greet-user-workflow.yml
+
+name: Greet User Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Greet the User
+        uses: ./.github/actions/greet-user
+        with:
+          name: 'Abhinav' # Replace with desired name or dynamic input

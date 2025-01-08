@@ -8,6 +8,9 @@
 
     <!-- Link to External CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Optional: Link to External JavaScript for Tab Functionality -->
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
@@ -15,22 +18,82 @@
         <p>Software Engineer | abhinavall0123@gmail.com</p>
     </header>
 
+    <!-- Tabbed Menu -->
+    <nav class="tab-menu" role="tablist">
+        <ul>
+            <li class="tab active" data-tab="resume" role="tab" aria-selected="true" tabindex="0">Resume</li>
+            <li class="tab" data-tab="projects" role="tab" aria-selected="false" tabindex="-1">Projects</li>
+            <li class="tab" data-tab="skills" role="tab" aria-selected="false" tabindex="-1">Skills</li>
+            <li class="tab" data-tab="about" role="tab" aria-selected="false" tabindex="-1">About Me</li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <!-- Search Bar -->
-        <div class="search-bar">
-            <form action="https://www.google.com/search" method="get" target="_blank">
-                <input type="text" name="q" placeholder="Search your resume..." required>
-                <button type="submit">Search</button>
-            </form>
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Resume Section -->
+            <div id="resume" class="tab-section active" role="tabpanel" aria-labelledby="resume-tab">
+                <h2>Resume</h2>
+                <div class="pdf-container">
+                    <iframe src="Resume_AI_ML.pdf" width="100%" height="800px" style="border: none;">
+                        This browser does not support PDFs. Please download the resume to view it: 
+                        <a href="Resume_AI_ML.pdf">Download Resume</a>.
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div id="projects" class="tab-section" role="tabpanel" aria-labelledby="projects-tab">
+                <h2>Projects</h2>
+                <ul class="projects-list">
+                    <li>
+                        <h3>Rosehack @ UCR 2024</h3>
+                        <p>
+                            Developed an AI-driven misogyny detector using Google's BERT model, achieving 94% accuracy in identifying misogynistic language. Deployed a browser extension for real-time detection, enhancing user experience and promoting a respectful online environment.
+                        </p>
+                        <a href="#" target="_blank">View Project</a>
+                    </li>
+                    <li>
+                        <h3>Cequence Hackathon 2023</h3>
+                        <p>
+                            Secured second place by integrating an AI-driven chatbot into Cequence Security's platform. Improved user interaction and usability with backend LLM (Language Learning Model) capabilities, streamlining communication and support processes.
+                        </p>
+                        <a href="#" target="_blank">View Project</a>
+                    </li>
+                    <!-- Add more projects as needed -->
+                </ul>
+            </div>
+
+            <!-- Skills Section -->
+            <div id="skills" class="tab-section" role="tabpanel" aria-labelledby="skills-tab">
+                <h2>Skills</h2>
+                <ul class="skills-list">
+                    <li><strong>Programming Languages:</strong> Python, Kotlin, Java, JavaScript, Scala, C/C++, TypeScript</li>
+                    <li><strong>Operating Systems:</strong> Linux, Android, Mac, Windows</li>
+                    <li><strong>Developer Tools:</strong> RVC Models, Stable Diffusion Models, Shell Scripting, Google Cloud Platform</li>
+                    <li><strong>Frameworks:</strong> Gradle, Maven, Apache Spark, PyTorch</li>
+                    <li><strong>Databases:</strong> SQLite3, SQL, Amazon Athena</li>
+                    <li><strong>Data Analytics Tools:</strong> Pandas, NumPy, Postman, VS Code, Android Studio</li>
+                    <li><strong>Interpersonal Skills:</strong> Agile, Scrum, Multitasking</li>
+                </ul>
+            </div>
+
+            <!-- About Me Section -->
+            <div id="about" class="tab-section" role="tabpanel" aria-labelledby="about-tab">
+                <h2>About Me</h2>
+                <p>
+                    I am a computer science student with a passion for exploring AI, machine learning, and Backend Computing. I enjoy hiking, discussing cars, and delving into mechanical concepts. My dedication to continuous learning drives me to stay updated with the latest technologies and apply them to real-world problems.
+                </p>
+                <!-- Add more about me content as needed -->
+            </div>
         </div>
 
-        <h2>Resume</h2>
-        <div class="pdf-container">
-            <iframe src="Resume_AI_ML.pdf">
-                This browser does not support PDFs. Please download the resume to view it: 
-                <a href="Resume_AI_ML.pdf">Download Resume</a>.
-            </iframe>
+        <!-- Optional: Remove the existing download link since the Resume section now includes it -->
+        <!--
+        <div class="download-link">
+            <a href="Resume_AI_ML.pdf" download>Download Resume</a>
         </div>
+        -->
     </div>
 </body>
 </html>

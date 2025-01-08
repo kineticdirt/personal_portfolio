@@ -1,74 +1,77 @@
 /* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
 }
 
-/* Header Styles */
 header {
-    background-color: #2c3e50;
+    background-color: #4CAF50;
     color: white;
-    padding: 40px 0;
+    padding: 40px 20px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5em;
-    letter-spacing: 2px;
 }
 
 header p {
-    margin: 10px 0 0;
+    margin: 10px 0 0 0;
     font-size: 1.2em;
-    color: #ecf0f1;
 }
 
-/* Container Styles */
-.container {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+/* Tabbed Menu Styles */
+.tab-menu {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
 }
 
-/* Text Box Styles */
-.text-box {
-    margin-bottom: 30px;
-    text-align: center;
+.tab-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
-.text-box input {
-    width: 70%;
-    max-width: 600px;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: 2px solid #2c3e50;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
+.tab-menu .tab {
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    color: #333;
 }
 
-.text-box input:focus {
-    border-color: #2980b9;
-    outline: none;
+.tab-menu .tab:hover {
+    background-color: #f0f0f0;
+}
+
+.tab-menu .active {
+    border-bottom: 3px solid #4CAF50;
+    color: #4CAF50;
+}
+
+/* Tab Content Styles */
+.tab-content {
+    padding: 20px;
+}
+
+.tab-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.tab-section.active {
+    display: block;
+    opacity: 1;
 }
 
 /* Resume Section Styles */
-h2 {
-    border-bottom: 2px solid #2c3e50;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    color: #2c3e50;
-    font-size: 2em;
-    text-align: center;
-}
-
 .pdf-container {
     width: 100%;
     height: 800px;
@@ -84,31 +87,106 @@ h2 {
     border: none;
 }
 
-/* Responsive Styles */
+/* Projects Section Styles */
+.projects-list {
+    list-style: none;
+    padding: 0;
+}
+
+.projects-list li {
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.projects-list h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.projects-list p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.projects-list a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.projects-list a:hover {
+    text-decoration: underline;
+}
+
+/* Skills Section Styles */
+.skills-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-left: 4px solid #4CAF50;
+}
+
+.skills-list li strong {
+    color: #2c3e50;
+}
+
+/* About Me Section Styles */
+#about p {
+    line-height: 1.6;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments for Tabs */
 @media (max-width: 768px) {
+    .tab-menu ul {
+        flex-direction: column;
+    }
+
+    .tab-menu .tab {
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .tab-menu .active {
+        border-bottom: none;
+        background-color: #f0f0f0;
+    }
+
     .pdf-container {
         height: 600px;
     }
 }
 
 @media (max-width: 480px) {
-    .pdf-container {
-        height: 400px;
+    .tab-menu .tab {
+        padding: 10px 15px;
+        font-size: 1em;
     }
-    
-    .text-box input {
-        width: 90%;
-    }
-    
+
     header h1 {
         font-size: 2em;
     }
-    
+
     header p {
         font-size: 1em;
     }
-    
-    h2 {
-        font-size: 1.5em;
+
+    .tab-content {
+        padding: 15px;
+    }
+
+    .pdf-container {
+        height: 400px;
     }
 }
