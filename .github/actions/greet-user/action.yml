@@ -1,0 +1,14 @@
+# .github/actions/greet-user/action.yml
+
+name: 'Greet User'
+description: 'Sends a greeting message'
+inputs:
+  name:
+    description: 'Name of the user'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Greet the User
+      shell: bash
+      run: echo "Hello, ${{ inputs.name }}! Welcome to the GitHub Actions workflow."
