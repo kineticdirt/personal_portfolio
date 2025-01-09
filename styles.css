@@ -190,3 +190,17 @@ header p {
         height: 400px;
     }
 }
+/* Watermark Styles */
+.watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
+    transform: rotate(-45deg);
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 1000; /* Ensures it's on top of other elements */
+    font-family: 'Roboto', sans-serif;
+    user-select: none; /* Prevents text selection */
+}
+
