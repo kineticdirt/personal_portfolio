@@ -147,6 +147,20 @@ header p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Watermark Styles */
+.watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
+    transform: rotate(-45deg);
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 1000; /* Ensures it's on top of other elements */
+    font-family: 'Roboto', sans-serif;
+    user-select: none; /* Prevents text selection */
+}
+
 /* Responsive Adjustments for Tabs */
 @media (max-width: 768px) {
     .tab-menu ul {
@@ -165,6 +179,13 @@ header p {
 
     .pdf-container {
         height: 600px;
+    }
+
+    /* Adjust Watermark for Smaller Screens */
+    .watermark {
+        font-size: 1em;
+        bottom: 5px;
+        right: 5px;
     }
 }
 
@@ -189,18 +210,11 @@ header p {
     .pdf-container {
         height: 400px;
     }
-}
-/* Watermark Styles */
-.watermark {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    font-size: 1.2em;
-    color: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
-    transform: rotate(-45deg);
-    pointer-events: none; /* Allows clicks to pass through */
-    z-index: 1000; /* Ensures it's on top of other elements */
-    font-family: 'Roboto', sans-serif;
-    user-select: none; /* Prevents text selection */
-}
 
+    /* Adjust Watermark for Mobile Screens */
+    .watermark {
+        font-size: 0.9em;
+        bottom: 3px;
+        right: 3px;
+    }
+}
