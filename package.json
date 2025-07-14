@@ -1,5 +1,32 @@
 {
+  "name": "abhinav-allam-resume",
+  "version": "1.0.0",
+  "description": "Personal resume website showcasing projects, skills, and about me sections.",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server",
+    "build": "node build.js",
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "keywords": [
+    "resume",
+    "portfolio",
+    "website",
+    "abhinav-allam"
+  ],
+  "author": "Abhinav Allam",
+  "license": "MIT",
   "dependencies": {
     "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "babel-jest": "^30.0.0",
+    "eslint": "^9.31.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.0.0",
+    "live-server": "^1.2.1"
   }
 }
