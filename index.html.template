@@ -33,7 +33,7 @@
             <div id="experience" class="tab-section active" role="tabpanel" aria-labelledby="experience-tab">
                 <h2>Experience</h2>
                 <div class="experience-list">
-                    
+                    <!--EXPERIENCE_PLACEHOLDER-->
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
             <div id="projects" class="tab-section" role="tabpanel" aria-labelledby="projects-tab">
                 <h2>Projects</h2>
                 <ul class="projects-list">
-                    
+                    <!--PROJECTS_PLACEHOLDER-->
                 </ul>
             </div>
 

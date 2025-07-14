@@ -1,31 +1,32 @@
 {
-    "name": "abhinav-allam-resume",
-    "version": "1.0.0",
-    "description": "Personal resume website showcasing projects, skills, and about me sections.",
-    "main": "index.js",
-    "scripts": {
-      "lint": "eslint .",
-      "test": "jest",
-      "build": "cp -R . build",
-      "start": "live-server"
-    },
-    "keywords": [
-      "resume",
-      "portfolio",
-      "website",
-      "abhinav-allam"
-    ],
-    "author": "Abhinav Allam",
-    "license": "MIT",
-    "devDependencies": {
-      "eslint": "^8.32.0",
-      "jest": "^29.0.0",
-      "live-server": "^1.2.1",
-      "identity-obj-proxy": "^3.0.0",
-      "babel-jest": "^29.0.0",
-      "@babel/core": "^7.20.0",
-      "@babel/preset-env": "^7.20.0"
-    },
-    "dependencies": {}
+  "name": "abhinav-allam-resume",
+  "version": "1.0.0",
+  "description": "Personal resume website showcasing projects, skills, and about me sections.",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server",
+    "build": "node build.js",
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "keywords": [
+    "resume",
+    "portfolio",
+    "website",
+    "abhinav-allam"
+  ],
+  "author": "Abhinav Allam",
+  "license": "MIT",
+  "dependencies": {
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "babel-jest": "^29.0.0",
+    "eslint": "^8.32.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.0.0",
+    "live-server": "^1.2.1"
   }
-  
+}
