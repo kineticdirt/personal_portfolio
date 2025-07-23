@@ -5,12 +5,14 @@ const path = require('path');
 const pdf = require('pdf-parse');
 
 // --- Configuration ---
+// CORRECT: Define a 'public' output directory for Vercel
+const OUTPUT_DIR = path.join(__dirname, 'public'); 
 const RESUME_PATH = path.join(__dirname, 'resume', 'Resume_AI_ML_V3.pdf');
 const TEMPLATE_PATH = path.join(__dirname, 'index.html.template');
-const OUTPUT_PATH = path.join(__dirname, 'index.html');
+// CORRECT: The final HTML file will now be inside the 'public' directory
+const OUTPUT_PATH = path.join(OUTPUT_DIR, 'index.html'); 
 
 // --- HTML Generation Functions ---
-// (Your existing functions for generateExperienceHtml, generateProjectsHtml go here...)
 // (No changes needed in this part)
 function generateExperienceHtml(text) {
   const sectionTextMatch = text.match(/###EXPERIENCE###([\s\S]*?)###/);
@@ -54,31 +56,31 @@ function generateProjectsHtml(text) {
 // --- Main Build Process ---
 
 async function build() {
-  // ==================== NEW DEBUGGING CODE ====================
-  console.log('--- Debugging Info ---');
-  console.log('Current working directory (where node was run):', process.cwd());
-  console.log('Script directory (__dirname):', __dirname);
-  console.log('Attempting to read resume from this exact path:', RESUME_PATH);
-  console.log('----------------------');
-  // ==========================================================
-
   console.log('🚀 Starting website build...');
 
   try {
     const resumeBuffer = await fs.readFile(RESUME_PATH);
     const pdfData = await pdf(resumeBuffer);
-    // ... rest of your build script ...
     const resumeText = pdfData.text;
     console.log('✅ Resume PDF parsed successfully.');
+
     const template = await fs.readFile(TEMPLATE_PATH, 'utf-8');
     console.log('✅ HTML template read successfully.');
+
     const experienceHtml = generateExperienceHtml(resumeText);
     const projectsHtml = generateProjectsHtml(resumeText);
     console.log('✅ Dynamic HTML content generated.');
+
     let outputHtml = template
       .replace('<!--EXPERIENCE_PLACEHOLDER-->', experienceHtml)
       .replace('<!--PROJECTS_PLACEHOLDER-->', projectsHtml);
+    
+    // NEW AND CRITICAL: Create the output directory before writing the file.
+    await fs.mkdir(OUTPUT_DIR, { recursive: true });
+
     await fs.writeFile(OUTPUT_PATH, outputHtml);
+    // The log message below is your confirmation that it's working correctly.
+    // It should print a path that includes '/public/'.
     console.log(`🎉 Build successful! Website written to ${OUTPUT_PATH}`);
 
   } catch (error) {
