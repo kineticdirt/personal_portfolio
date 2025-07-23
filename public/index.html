@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Allam - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Abhinav Allam</h1>
+        <p>Software Engineer | abhinavall0123@gmail.com</p>
+    </header>
+
+    <!-- Tabbed Menu -->
+    <nav class="tab-menu" role="tablist">
+        <ul>
+            <!-- NOTE: I've switched the default active tab to 'Experience' -->
+            <li class="tab active" data-tab="experience" role="tab" aria-selected="true" tabindex="0">Experience</li>
+            <li class="tab" data-tab="projects" role="tab" aria-selected="false" tabindex="-1">Projects</li>
+            <li class="tab" data-tab="skills" role="tab" aria-selected="false" tabindex="-1">Skills</li>
+            <li class="tab" data-tab="resume" role="tab" aria-selected="false" tabindex="-1">Resume</li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Tab Content -->
+        <div class="tab-content">
+
+            <!-- Experience Section (NEW) -->
+            <div id="experience" class="tab-section active" role="tabpanel" aria-labelledby="experience-tab">
+                <h2>Experience</h2>
+                <div class="experience-list">
+                    
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div id="projects" class="tab-section" role="tabpanel" aria-labelledby="projects-tab">
+                <h2>Projects</h2>
+                <ul class="projects-list">
+                    
+                </ul>
+            </div>
+
+            <!-- Skills Section -->
+            <div id="skills" class="tab-section" role="tabpanel" aria-labelledby="skills-tab">
+                <h2>Skills</h2>
+                <ul class="skills-list">
+                    <!--SKILLS_PLACEHOLDER-->
+                    <!-- Example: <li><strong>Programming Languages:</strong> Python, Kotlin, Java...</li> -->
+                </ul>
+            </div>
+            
+            <!-- Resume Section (Original PDF embed) -->
+            <div id="resume" class="tab-section" role="tabpanel" aria-labelledby="resume-tab">
+                <h2>Resume</h2>
+                <div class="pdf-container">
+                    <!-- Ensure the src path is correct relative to the root -->
+                    <iframe src="./resume/Resume_AI_ML_V3.pdf" width="100%" height="800px" style="border: none;">
+                        This browser does not support PDFs. Please download the resume to view it: 
+                        <a href="./resume/Resume_AI_ML_V3.pdf">Download Resume</a>.
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
