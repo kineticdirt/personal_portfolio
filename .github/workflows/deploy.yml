@@ -2,19 +2,16 @@
 
 name: Build and Deploy GitHub Pages
 
-# This workflow runs on any push to the main branch.
 on:
   push:
     branches: [ main ]
 
-# Specifies the permissions the workflow needs to deploy to GitHub Pages.
 permissions:
   contents: read
   pages: write
   id-token: write
 
 jobs:
-  # This is the single job that will build and deploy your site.
   build-and-deploy:
     runs-on: ubuntu-latest
     environment:
@@ -22,37 +19,33 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      # Step 1: Checkout your repository so the workflow can access your code
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js, which is needed to run our build script
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Use a current LTS version of Node.js
-          cache: 'npm' # Cache npm packages for faster builds
+          node-version: '20'
+          cache: 'npm'
 
-      # Step 3: Install project dependencies (e.g., pdf-parse)
       - name: Install Dependencies
         run: npm install
 
-      # Step 4: CRITICAL - Run the build script defined in package.json
       - name: Build Website From Resume
+        # This command runs your build.js script, which creates the 'public' directory
         run: npm run build
 
-      # Step 5: Set up the environment for GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Step 6: Upload the entire directory as a build artifact for deployment
+      # --- FIX: CHANGE THE UPLOAD PATH ---
+      # This tells the action to upload the contents of the 'public'
+      # directory, which is where your built website is.
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Path to upload is the root of your project, which now contains the new index.html
-          path: '.'
+          path: './public' # <-- This path must match your build script's output
 
-      # Step 7: Deploy the artifact to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

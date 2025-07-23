@@ -11,6 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # --- FIX: ADD THIS STEP ---
+      # This step checks out your repository code onto the runner
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      # Now the workflow can find your local action
       - name: Greet the User
         uses: ./.github/actions/greet-user
         with:
