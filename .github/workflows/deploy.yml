@@ -6,6 +6,9 @@ on:
   push:
     branches: [ main ]
 
+# --- THIS IS THE FIX ---
+# This block explicitly grants the workflow permission to write to
+# your repository, which is required for deploying to GitHub Pages.
 permissions:
   contents: read
   pages: write
@@ -22,6 +25,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Use a modern Node.js version to prevent test errors
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -32,19 +36,16 @@ jobs:
         run: npm install
 
       - name: Build Website From Resume
-        # This command runs your build.js script, which creates the 'public' directory
         run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # --- FIX: CHANGE THE UPLOAD PATH ---
-      # This tells the action to upload the contents of the 'public'
-      # directory, which is where your built website is.
+      # Upload the 'public' directory created by your build script
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './public' # <-- This path must match your build script's output
+          path: './public'
 
       - name: Deploy to GitHub Pages
         id: deployment
