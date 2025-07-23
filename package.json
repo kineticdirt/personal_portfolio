@@ -6,7 +6,7 @@
   "scripts": {
     "start": "live-server",
     "build": "node build.js",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "test": "jest"
   },
   "keywords": [
