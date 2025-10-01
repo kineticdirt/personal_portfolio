@@ -5,13 +5,40 @@ name: Greet User Workflow
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name to greet'
+        required: true
+        default: 'Abhinav'
+        type: string
 
 jobs:
   greet:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Greeting Test
+        run: |
+          node -e "
+          const { greet } = require('./script.js');
+          const name = '${{ github.event.inputs.name || 'Abhinav' }}';
+          console.log(greet(name));
+          "
+
       - name: Greet the User
         uses: ./.github/actions/greet-user
         with:
-          name: 'Abhinav' # Replace with desired name or dynamic input
+          name: ${{ github.event.inputs.name || 'Abhinav' }}

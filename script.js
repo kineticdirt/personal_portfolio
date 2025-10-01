@@ -4,7 +4,7 @@
 class PortfolioApp {
     constructor() {
         this.currentSection = "home";
-        this.isDarkMode = this.getStoredTheme();
+        this.isDarkMode = true; // Force dark mode
         this.isMenuOpen = false;
         this.init();
     }
@@ -30,12 +30,21 @@ class PortfolioApp {
         const themeToggle = document.querySelector(".theme-toggle");
         const body = document.body;
         
+        console.log('Initializing theme, isDarkMode:', this.isDarkMode);
+        console.log('Body element:', body);
+        
         if (this.isDarkMode) {
             body.setAttribute("data-theme", "dark");
-            themeToggle.innerHTML = "<i class=\"fas fa-moon\"></i>";
+            body.classList.add("dark-theme");
+            body.classList.remove("light-theme");
+            if (themeToggle) themeToggle.innerHTML = "<i class=\"fas fa-moon\"></i>";
+            console.log('Applied dark theme on init');
         } else {
             body.setAttribute("data-theme", "light");
-            themeToggle.innerHTML = "<i class=\"fas fa-sun\"></i>";
+            body.classList.add("light-theme");
+            body.classList.remove("dark-theme");
+            if (themeToggle) themeToggle.innerHTML = "<i class=\"fas fa-sun\"></i>";
+            console.log('Applied light theme on init');
         }
     }
 
@@ -48,18 +57,28 @@ class PortfolioApp {
     }
 
     toggleTheme() {
+        console.log('Theme toggle clicked, current isDarkMode:', this.isDarkMode);
         this.isDarkMode = !this.isDarkMode;
         const body = document.body;
         const themeToggle = document.querySelector(".theme-toggle");
         
+        console.log('New isDarkMode:', this.isDarkMode);
+        console.log('Theme toggle element:', themeToggle);
+        
         if (this.isDarkMode) {
             body.setAttribute("data-theme", "dark");
-            themeToggle.innerHTML = "<i class=\"fas fa-moon\"></i>";
+            body.classList.add("dark-theme");
+            body.classList.remove("light-theme");
+            if (themeToggle) themeToggle.innerHTML = "<i class=\"fas fa-moon\"></i>";
             localStorage.setItem("theme", "dark");
+            console.log('Applied dark theme');
         } else {
             body.setAttribute("data-theme", "light");
-            themeToggle.innerHTML = "<i class=\"fas fa-sun\"></i>";
+            body.classList.add("light-theme");
+            body.classList.remove("dark-theme");
+            if (themeToggle) themeToggle.innerHTML = "<i class=\"fas fa-sun\"></i>";
             localStorage.setItem("theme", "light");
+            console.log('Applied light theme');
         }
     }
 
@@ -862,6 +881,7 @@ class PortfolioApp {
     setupRadialGrid() {
         const heroSection = document.querySelector('.hero-section');
         const radialGridOverlay = document.getElementById('radial-grid-overlay');
+        const heroContent = document.querySelector('.hero-content');
         
         if (!heroSection || !radialGridOverlay) return;
 
@@ -870,14 +890,65 @@ class PortfolioApp {
             const x = ((e.clientX - rect.left) / rect.width) * 100;
             const y = ((e.clientY - rect.top) / rect.height) * 100;
             
+            // Update cursor position for radial gradient
             radialGridOverlay.style.setProperty('--mouse-x', `${x}%`);
             radialGridOverlay.style.setProperty('--mouse-y', `${y}%`);
+            
+            // 3D cloud layer reaction to cursor
+            const cloudLayers = radialGridOverlay.querySelectorAll('.cloud-layer');
+            cloudLayers.forEach((layer, index) => {
+                const intensity = Math.sin(Date.now() * 0.002 + index) * 0.2 + 0.8;
+                const rotationX = (y - 50) * 0.2; // Rotation based on Y position
+                const rotationY = (x - 50) * 0.3; // Rotation based on X position
+                const depth = Math.sin(Date.now() * 0.001 + index) * 10 + 20;
+                const scale = 1 + (Math.abs(x - 50) / 100) * 0.1;
+                
+                layer.style.setProperty('--depth', `${depth}px`);
+                layer.style.setProperty('--rotX', `${rotationX}deg`);
+                layer.style.setProperty('--rotY', `${rotationY}deg`);
+                layer.style.transform = `translateZ(${depth}px) rotateX(${rotationX}deg) rotateY(${rotationY}deg) scale(${scale})`;
+                layer.style.opacity = intensity;
+            });
+            
+            // 3D tilt effect on hero content
+            if (heroContent) {
+                const tiltX = (y - 50) * 0.1;
+                const tiltY = (x - 50) * -0.1;
+                heroContent.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+            }
+            
+            // Dynamic code window interaction
+            const codeWindow = document.querySelector('.code-window');
+            if (codeWindow) {
+                const windowTiltX = (y - 50) * 0.05;
+                const windowTiltY = (x - 50) * -0.05;
+                const windowDepth = 40 + (Math.abs(x - 50) / 100) * 20;
+                codeWindow.style.transform = `translateZ(${windowDepth}px) rotateX(${windowTiltX}deg) rotateY(${windowTiltY}deg)`;
+            }
         });
 
         // Reset position when mouse leaves
         heroSection.addEventListener('mouseleave', () => {
             radialGridOverlay.style.setProperty('--mouse-x', '50%');
             radialGridOverlay.style.setProperty('--mouse-y', '50%');
+            
+            // Reset cloud layers
+            const cloudLayers = radialGridOverlay.querySelectorAll('.cloud-layer');
+            cloudLayers.forEach(layer => {
+                layer.style.transform = 'translateZ(0px) rotateX(0deg) rotateY(0deg) scale(1)';
+                layer.style.opacity = '1';
+            });
+            
+            // Reset hero content
+            if (heroContent) {
+                heroContent.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            }
+            
+            // Reset code window
+            const codeWindow = document.querySelector('.code-window');
+            if (codeWindow) {
+                codeWindow.style.transform = 'translateZ(40px) rotateX(5deg) rotateY(-5deg)';
+            }
         });
     }
 
@@ -895,9 +966,9 @@ class PortfolioApp {
                         behavior: 'smooth',
                         block: 'start'
                     });
-        }
-      });
-    });
+                }
+            });
+        });
   
         // Back to top functionality
         const backToTopLink = document.querySelector('.back-to-top-link');
@@ -913,8 +984,6 @@ class PortfolioApp {
                 }
             });
         }
-    }
-
     }
 }
 

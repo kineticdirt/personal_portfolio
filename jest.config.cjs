@@ -1,4 +1,4 @@
-// jest.config.js
+// jest.config.cjs
 
 module.exports = {
     // Specifies the root directories Jest should scan for tests and modules
@@ -18,9 +18,6 @@ module.exports = {
       '\\.(css)$': 'identity-obj-proxy',
     },
   
-    // A preset that is used as a base for Jest's configuration
-    preset: 'jest',
-  
     // Transform files matching the regex with the provided transformer
     transform: {
       '^.+\\.jsx?$': 'babel-jest',
@@ -28,5 +25,24 @@ module.exports = {
   
     // Indicates whether each individual test should be reported during the run
     verbose: true,
+    
+    // Setup files
+    setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+    
+    // Coverage configuration
+    collectCoverageFrom: [
+      'script.js',
+      '!**/node_modules/**',
+      '!**/dist/**'
+    ],
+    
+    // Coverage thresholds
+    coverageThreshold: {
+      global: {
+        branches: 40,
+        functions: 60,
+        lines: 60,
+        statements: 60
+      }
+    }
   };
-  

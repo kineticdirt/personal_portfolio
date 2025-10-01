@@ -3,93 +3,669 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhinav Allam - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Link to External CSS -->
+    <title>Abhinav Allam - Software Engineer & AI/ML Enthusiast</title>
+    <meta name="description" content="Portfolio of Abhinav Allam - Software Engineer specializing in AI/ML, Backend Development, and Full-Stack Solutions">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Modern Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Optional: Link to External JavaScript for Tab Functionality -->
-    <script defer src="script.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-    <header>
-        <h1>Abhinav Allam</h1>
-        <p>Software Engineer | abhinavall0123@gmail.com</p>
-    </header>
-
-    <!-- Tabbed Menu -->
-    <nav class="tab-menu" role="tablist">
-        <ul>
-            <li class="tab active" data-tab="resume" role="tab" aria-selected="true" tabindex="0">Resume</li>
-            <li class="tab" data-tab="projects" role="tab" aria-selected="false" tabindex="-1">Projects</li>
-            <li class="tab" data-tab="skills" role="tab" aria-selected="false" tabindex="-1">Skills</li>
-            <li class="tab" data-tab="about" role="tab" aria-selected="false" tabindex="-1">About Me</li>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-text">Abhinav Allam</span>
+            </div>
+            <ul class="nav-menu" role="menubar">
+                <li class="nav-item" role="none">
+                    <a href="#home" class="nav-link active" role="menuitem" data-section="home">Home</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#about" class="nav-link" role="menuitem" data-section="about">About</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#projects" class="nav-link" role="menuitem" data-section="projects">Projects</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#experience" class="nav-link" role="menuitem" data-section="experience">Experience</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#skills" class="nav-link" role="menuitem" data-section="skills">Skills</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#resume" class="nav-link" role="menuitem" data-section="resume">Resume</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="#contact" class="nav-link" role="menuitem" data-section="contact">Contact</a>
+                </li>
         </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <div class="container">
-        <!-- Tab Content -->
-        <div class="tab-content">
-            <!-- Resume Section -->
-            <div id="resume" class="tab-section active" role="tabpanel" aria-labelledby="resume-tab">
-                <h2>Resume</h2>
-                <div class="pdf-container">
-                    <iframe src="Resume_AI_ML.pdf" width="100%" height="800px" style="border: none;">
-                        This browser does not support PDFs. Please download the resume to view it: 
-                        <a href="Resume_AI_ML.pdf">Download Resume</a>.
-                    </iframe>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section active">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="greeting">Hello, I'm</span>
+                            <span class="name">Abhinav Allam</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Software Engineer & AI/ML Enthusiast
+                        </p>
+                        <p class="hero-description">
+                            Passionate about building intelligent solutions and exploring the intersection of 
+                            artificial intelligence, machine learning, and backend computing. I love creating 
+                            innovative projects that solve real-world problems.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary" data-section="projects">
+                                <span>View My Work</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#contact" class="btn btn-secondary" data-section="contact">
+                                <span>Get In Touch</span>
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="code-window">
+                            <div class="window-header">
+                                <div class="window-controls">
+                                    <span class="control close"></span>
+                                    <span class="control minimize"></span>
+                                    <span class="control maximize"></span>
+                                </div>
+                                <div class="window-title">abhinav.py</div>
+                            </div>
+                            <div class="code-content">
+                                <pre><code class="python">class AbhinavAllam:
+    def __init__(self):
+        self.name = "Abhinav Allam"
+        self.role = "Software Engineer"
+        self.skills = [
+            "Python", "JavaScript", "Machine Learning",
+            "Backend Development", "AI/ML"
+        ]
+        self.passion = "Building intelligent solutions"
+    
+    def work(self):
+        return "Creating innovative projects that matter"
+    
+    def learn(self):
+        return "Always exploring new technologies"
+
+# Let's build something amazing together!
+me = AbhinavAllam()</code></pre>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="radial-grid-overlay" id="radial-grid-overlay">
+                <div class="cloud-layer cloud-layer-1"></div>
+                <div class="cloud-layer cloud-layer-2"></div>
+                <div class="cloud-layer cloud-layer-3"></div>
+            </div>
+            <div class="section-scroll-arrow" data-next-section="about">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+    <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Get to know me better</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="about-card">
+                            <h3>Who I Am</h3>
+                            <p>
+                                I'm a dedicated Software Engineer and AI/ML Enthusiast with 3+ years of experience 
+                                building intelligent solutions. My journey in tech is driven by a passion for 
+                                leveraging artificial intelligence to solve real-world problems and create innovative applications.
+                            </p>
+                        </div>
+                        <div class="about-card">
+                            <h3>What I Do</h3>
+                            <p>
+                                I specialize in full-stack development with expertise in Python, JavaScript, and machine learning frameworks. 
+                                I build scalable applications, develop AI models, and integrate intelligent systems into production environments. 
+                                From enterprise solutions to personal projects, I love tackling challenging problems with innovative approaches.
+                            </p>
+                        </div>
+                        <div class="about-card">
+                            <h3>Beyond Code</h3>
+                            <p>
+                                I'm constantly exploring cutting-edge AI technologies, contributing to open-source projects, 
+                                and working on personal machine learning experiments. I believe in continuous learning, 
+                                staying ahead of technological trends, and sharing knowledge with the developer community.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">AI Model Accuracy</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Learning Mindset</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-scroll-arrow" data-next-section="projects">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
 
             <!-- Projects Section -->
-            <div id="projects" class="tab-section" role="tabpanel" aria-labelledby="projects-tab">
-                <h2>Projects</h2>
-                <ul class="projects-list">
-                    <li>
-                        <h3>Rosehack @ UCR 2024</h3>
-                        <p>
-                            Developed an AI-driven misogyny detector using Google's BERT model, achieving 94% accuracy in identifying misogynistic language. Deployed a browser extension for real-time detection, enhancing user experience and promoting a respectful online environment.
-                        </p>
-                        <a href="#" target="_blank">View Project</a>
-                    </li>
-                    <li>
-                        <h3>Cequence Hackathon 2023</h3>
-                        <p>
-                            Secured second place by integrating an AI-driven chatbot into Cequence Security's platform. Improved user interaction and usability with backend LLM (Language Learning Model) capabilities, streamlining communication and support processes.
-                        </p>
-                        <a href="#" target="_blank">View Project</a>
-                    </li>
-                    <!-- Add more projects as needed -->
-                </ul>
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Some of my recent work</p>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card featured">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="javascript:void(0)" class="project-link" aria-label="View project">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" class="project-link" aria-label="View source code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">BERT</span>
+                                <span class="tech-tag">Browser Extension</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Misogyny Detector</h3>
+                            <p class="project-description">
+                                Developed an AI-driven misogyny detector using Google's BERT model, achieving 
+                                94% accuracy in identifying misogynistic language. Deployed as a browser 
+                                extension for real-time detection.
+                            </p>
+                            <div class="project-meta">
+                                <span class="project-event">Rosehack @ UCR 2024</span>
+                                <span class="project-status">Completed</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="javascript:void(0)" class="project-link" aria-label="View project">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" class="project-link" aria-label="View source code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">LLM</span>
+                                <span class="tech-tag">Chatbot</span>
+                                <span class="tech-tag">Backend</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Chatbot Integration</h3>
+                            <p class="project-description">
+                                Secured second place by integrating an AI-driven chatbot into Cequence 
+                                Security's platform. Improved user interaction with backend LLM capabilities.
+                            </p>
+                            <div class="project-meta">
+                                <span class="project-event">Cequence Hackathon 2023</span>
+                                <span class="project-status">2nd Place</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="javascript:void(0)" class="project-link" aria-label="View project">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" class="project-link" aria-label="View source code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Portfolio</span>
+                                <span class="tech-tag">Modern Web</span>
+                                <span class="tech-tag">Responsive</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Modern Portfolio Website</h3>
+                            <p class="project-description">
+                                A completely redesigned, modern portfolio website featuring smooth animations, 
+                                dark mode, and responsive design. Built with vanilla HTML, CSS, and JavaScript.
+                            </p>
+                            <div class="project-meta">
+                                <span class="project-event">Personal Project</span>
+                                <span class="project-status">Live</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
+            <div class="section-scroll-arrow" data-next-section="experience">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-image">
+                        <img src="assets/images/computer-4405766_1280.jpg" alt="Professional Experience" />
+                    </div>
+                    <h2 class="section-title">Professional Experience</h2>
+                    <p class="section-subtitle">My journey in software development and AI/ML</p>
+                </div>
+                <div class="experience-timeline">
+                    <!-- Experience items will be populated from resume data -->
+                    <div class="timeline-item" data-expanded="false">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">[DATE RANGE]</div>
+                            <h3 class="timeline-title">[JOB TITLE]</h3>
+                            <h4 class="timeline-company">[COMPANY NAME]</h4>
+                            <p class="timeline-description">
+                                [BRIEF DESCRIPTION - Click to expand for full details]
+                            </p>
+                            <div class="timeline-tech">
+                                <span class="tech-tag">[TECH 1]</span>
+                                <span class="tech-tag">[TECH 2]</span>
+                                <span class="tech-tag">[TECH 3]</span>
+                            </div>
+                            <div class="timeline-expanded" style="display: none;">
+                                <div class="expanded-content">
+                                    <h4>Key Achievements:</h4>
+                                    <ul>
+                                        <li>[ACHIEVEMENT 1]</li>
+                                        <li>[ACHIEVEMENT 2]</li>
+                                        <li>[ACHIEVEMENT 3]</li>
+                                    </ul>
+                                    <h4>Projects:</h4>
+                                    <ul>
+                                        <li>[PROJECT 1]</li>
+                                        <li>[PROJECT 2]</li>
+                                        <li>[PROJECT 3]</li>
+                </ul>
+                                    <h4>Technologies Used:</h4>
+                                    <div class="tech-grid">
+                                        <span class="tech-item">[TECHNOLOGY]</span>
+                                        <span class="tech-item">[TECHNOLOGY]</span>
+                                        <span class="tech-item">[TECHNOLOGY]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-scroll-arrow" data-next-section="skills">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
 
             <!-- Skills Section -->
-            <div id="skills" class="tab-section" role="tabpanel" aria-labelledby="skills-tab">
-                <h2>Skills</h2>
-                <ul class="skills-list">
-                    <li><strong>Programming Languages:</strong> Python, Kotlin, Java, JavaScript, Scala, C/C++, TypeScript</li>
-                    <li><strong>Operating Systems:</strong> Linux, Android, Mac, Windows</li>
-                    <li><strong>Developer Tools:</strong> RVC Models, Stable Diffusion Models, Shell Scripting, Google Cloud Platform</li>
-                    <li><strong>Frameworks:</strong> Gradle, Maven, Apache Spark, PyTorch</li>
-                    <li><strong>Databases:</strong> SQLite3, SQL, Amazon Athena</li>
-                    <li><strong>Data Analytics Tools:</strong> Pandas, NumPy, Postman, VS Code, Android Studio</li>
-                    <li><strong>Interpersonal Skills:</strong> Agile, Scrum, Multitasking</li>
-                </ul>
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Technologies</h2>
+                    <p class="section-subtitle">Tools and technologies I work with</p>
+                </div>
+                <div class="skills-content">
+                    <div class="skills-categories">
+                        <div class="skill-category">
+                            <h3 class="category-title">
+                                <i class="fas fa-code"></i>
+                                Programming Languages
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag expert">Python</span>
+                                <span class="skill-tag expert">JavaScript</span>
+                                <span class="skill-tag advanced">Kotlin</span>
+                                <span class="skill-tag advanced">Java</span>
+                                <span class="skill-tag intermediate">Scala</span>
+                                <span class="skill-tag intermediate">C/C++</span>
+                                <span class="skill-tag intermediate">TypeScript</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title">
+                                <i class="fas fa-brain"></i>
+                                AI/ML & Data
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag expert">PyTorch</span>
+                                <span class="skill-tag expert">Pandas</span>
+                                <span class="skill-tag expert">NumPy</span>
+                                <span class="skill-tag advanced">BERT Models</span>
+                                <span class="skill-tag advanced">Stable Diffusion</span>
+                                <span class="skill-tag intermediate">Apache Spark</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title">
+                                <i class="fas fa-server"></i>
+                                Backend & Infrastructure
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag expert">Google Cloud Platform</span>
+                                <span class="skill-tag advanced">SQL</span>
+                                <span class="skill-tag advanced">SQLite3</span>
+                                <span class="skill-tag intermediate">Amazon Athena</span>
+                                <span class="skill-tag intermediate">Shell Scripting</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title">
+                                <i class="fas fa-tools"></i>
+                                Development Tools
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag expert">VS Code</span>
+                                <span class="skill-tag expert">Git</span>
+                                <span class="skill-tag advanced">Gradle</span>
+                                <span class="skill-tag advanced">Maven</span>
+                                <span class="skill-tag intermediate">Postman</span>
+                                <span class="skill-tag intermediate">Android Studio</span>
+                            </div>
             </div>
 
-            <!-- About Me Section -->
-            <div id="about" class="tab-section" role="tabpanel" aria-labelledby="about-tab">
-                <h2>About Me</h2>
-                <p>
-                    I am a computer science student with a passion for exploring AI, machine learning, and Backend Computing. I enjoy hiking, discussing cars, and delving into mechanical concepts. My dedication to continuous learning drives me to stay updated with the latest technologies and apply them to real-world problems.
-                </p>
-                <!-- Add more about me content as needed -->
+                        <div class="skill-category">
+                            <h3 class="category-title">
+                                <i class="fas fa-users"></i>
+                                Soft Skills
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag expert">Problem Solving</span>
+                                <span class="skill-tag expert">Team Collaboration</span>
+                                <span class="skill-tag advanced">Agile/Scrum</span>
+                                <span class="skill-tag advanced">Communication</span>
+                                <span class="skill-tag intermediate">Project Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-scroll-arrow" data-next-section="resume">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="resume-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Resume</h2>
+                    <p class="section-subtitle">Download or view my resume</p>
+                </div>
+                <div class="resume-content">
+                    <div class="resume-actions">
+                        <a href="assets/documents/Resume_AI_ML.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i>
+                            <span>Download PDF</span>
+                        </a>
+                        <button class="btn btn-secondary" id="view-resume-btn">
+                            <i class="fas fa-eye"></i>
+                            <span>View Online</span>
+                        </button>
+                    </div>
+                    <div class="resume-preview" id="resume-preview" style="display: none;">
+                        <div class="resume-header">
+                            <h3>Resume Preview</h3>
+                            <button class="close-preview" id="close-preview" aria-label="Close preview">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="pdf-container">
+                            <iframe src="assets/documents/Resume_AI_ML.pdf" width="100%" height="600px" style="border: none;">
+                                <p>Your browser does not support PDFs. Please download the resume to view it: 
+                                <a href="assets/documents/Resume_AI_ML.pdf">Download Resume</a>.</p>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-scroll-arrow" data-next-section="contact">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's work together on something amazing</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-message">
+                        <h3>Let's Connect</h3>
+                        <p>
+                            I'm always interested in new opportunities, collaborations, and interesting projects. 
+                            Whether you have a question, want to work together, or just want to say hi, 
+                            I'd love to hear from you!
+                        </p>
+                        <div class="availability">
+                            <span class="status-indicator available"></span>
+                            <span>Available for opportunities</span>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>GitHub</h3>
+                                <p>@kineticdirt</p>
+                                <a href="https://github.com/kineticdirt" class="contact-link" target="_blank" rel="noopener">View Profile</a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>LinkedIn</h3>
+                                <p>Connect with me</p>
+                                <a href="javascript:void(0)" class="contact-link" target="_blank" rel="noopener">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="back-to-top-bar">
+                <a href="#home" class="back-to-top-link">
+                    <span>Back to Top</span>
+                    <i class="fas fa-chevron-up"></i>
+                </a>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Abhinav Allam. Built with passion and modern web technologies.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/kineticdirt" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:abhinavall0123@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="javascript:void(0)" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PDF Upload Modal -->
+    <div id="pdf-upload-modal" class="admin-modal" style="display: none;">
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h3>Upload Resume PDF</h3>
+                <button id="close-pdf-modal" class="admin-close">&times;</button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="upload-area" id="upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop your resume PDF here or click to browse</p>
+                    <input type="file" id="pdf-file-input" accept=".pdf" style="display: none;">
+                </div>
+                <div class="upload-progress" id="upload-progress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p id="progress-text">Analyzing resume...</p>
+                </div>
+                <div class="upload-actions">
+                    <button id="process-pdf" class="btn btn-primary" disabled>Process Resume</button>
+                    <button id="cancel-upload" class="btn btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="admin-panel" style="display: none;">
+        <div class="admin-header">
+            <h3>Admin Panel</h3>
+            <button id="close-admin" class="admin-close">&times;</button>
+        </div>
+        <div class="admin-content">
+            <div class="admin-section">
+                <h4>Edit About Section</h4>
+                <div class="admin-field">
+                    <label>Who I Am:</label>
+                    <textarea id="edit-who-i-am" rows="3"></textarea>
+                </div>
+                <div class="admin-field">
+                    <label>What I Do:</label>
+                    <textarea id="edit-what-i-do" rows="3"></textarea>
+                </div>
+                <div class="admin-field">
+                    <label>Beyond Code:</label>
+                    <textarea id="edit-beyond-code" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="admin-section">
+                <h4>Edit Statistics</h4>
+                <div class="admin-field">
+                    <label>Years Experience:</label>
+                    <input type="text" id="edit-years-exp" />
+                </div>
+                <div class="admin-field">
+                    <label>Projects Completed:</label>
+                    <input type="text" id="edit-projects-count" />
+                </div>
+                <div class="admin-field">
+                    <label>AI Model Accuracy:</label>
+                    <input type="text" id="edit-ai-accuracy" />
+                </div>
+            </div>
+            <div class="admin-actions">
+                <button id="upload-resume" class="btn btn-primary">Upload Resume PDF</button>
+                <button id="save-changes" class="btn btn-primary">Save Changes</button>
+                <button id="preview-changes" class="btn btn-secondary">Preview</button>
+                <button id="reset-changes" class="btn btn-secondary">Reset</button>
+                <button id="recalculate-stats" class="btn btn-secondary">Recalculate Stats</button>
+            </div>
             </div>
         </div>
 
-        <!-- Watermark -->
-        <div class="watermark" aria-hidden="true">Still Under Development</div>
+    <!-- Admin Login Modal -->
+    <div id="admin-login-modal" class="admin-modal" style="display: none;">
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h3>Admin Login</h3>
+                <button id="close-login-modal" class="admin-close">&times;</button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="admin-field">
+                    <label>Username:</label>
+                    <input type="text" id="admin-username" />
+                </div>
+                <div class="admin-field">
+                    <label>Password:</label>
+                    <input type="password" id="admin-password" />
+                </div>
+                <button id="admin-login-btn" class="btn btn-primary">Login</button>
+            </div>
+        </div>
     </div>
+
+    <!-- Admin Access Button -->
+    <button id="admin-access-btn" class="admin-access-btn" title="Admin Access">
+        <i class="fas fa-cog"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="pdf-analyzer.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
