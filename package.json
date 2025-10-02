@@ -20,7 +20,15 @@
     "deploy": "npm run build && gh-pages -d .",
     "preview": "live-server --port=8080 --open=/dist/",
     "clean": "rimraf dist coverage",
-    "postinstall": "npm run validate"
+    "postinstall": "npm run validate",
+    "tunnel:setup": "chmod +x setup-cloudflare-tunnel.sh && ./setup-cloudflare-tunnel.sh",
+    "tunnel:start": "chmod +x deploy.sh && ./deploy.sh start",
+    "tunnel:stop": "chmod +x deploy.sh && ./deploy.sh stop",
+    "tunnel:restart": "chmod +x deploy.sh && ./deploy.sh restart",
+    "tunnel:status": "chmod +x deploy.sh && ./deploy.sh status",
+    "tunnel:logs": "chmod +x deploy.sh && ./deploy.sh logs",
+    "tunnel:update": "chmod +x deploy.sh && ./deploy.sh update",
+    "install:deps": "chmod +x install-dependencies.sh && ./install-dependencies.sh"
   },
   "keywords": [
     "portfolio",

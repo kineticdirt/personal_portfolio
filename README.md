@@ -132,6 +132,112 @@ The site is automatically deployed to GitHub Pages on every push to the main bra
 npm run deploy
 ```
 
+## 🌐 Cloudflare Tunnel Deployment
+
+For remote access and custom domain deployment, this project includes Cloudflare tunnel setup for Linux servers.
+
+### Prerequisites
+
+- Linux server (Ubuntu/Debian recommended)
+- Cloudflare account with Zero Trust enabled
+- Domain configured with Cloudflare DNS
+
+### Quick Setup
+
+1. **Clone the repository on your Linux server:**
+   ```bash
+   git clone https://github.com/kineticdirt/personal_portfolio.git
+   cd personal_portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm run install:deps
+   ```
+
+3. **Set up Cloudflare tunnel:**
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com) > Zero Trust > Access > Tunnels
+   - Create a new tunnel named `abhinav-portfolio-tunnel`
+   - Download the credentials file and save it as `~/.cloudflared/abhinav-portfolio-tunnel.json`
+   - Configure the tunnel with hostname: `portfolio.abhinavallam.com` (or your domain)
+
+4. **Run the setup script:**
+   ```bash
+   npm run tunnel:setup
+   ```
+
+### Available Tunnel Commands
+
+```bash
+# Setup and installation
+npm run tunnel:setup    # Full tunnel setup
+npm run install:deps    # Install system dependencies
+
+# Service management
+npm run tunnel:start    # Start services
+npm run tunnel:stop     # Stop services
+npm run tunnel:restart  # Restart services
+npm run tunnel:status   # Check service status
+npm run tunnel:logs     # View service logs
+npm run tunnel:update   # Pull updates and restart
+```
+
+### Manual Script Usage
+
+```bash
+# Make scripts executable
+chmod +x *.sh
+
+# Install dependencies
+./install-dependencies.sh
+
+# Setup tunnel
+./setup-cloudflare-tunnel.sh
+
+# Deploy and manage
+./deploy.sh start      # Start services
+./deploy.sh stop       # Stop services
+./deploy.sh restart    # Restart services
+./deploy.sh status     # Check status
+./deploy.sh logs       # View logs
+./deploy.sh update     # Update and restart
+```
+
+### Configuration Files
+
+- `cloudflare-tunnel.yml` - Tunnel configuration
+- `setup-cloudflare-tunnel.sh` - Full setup script
+- `deploy.sh` - Service management script
+- `install-dependencies.sh` - Dependency installation
+
+### Service Management
+
+The setup creates two systemd services:
+- `abhinav-portfolio.service` - Portfolio web server
+- `cloudflared-tunnel.service` - Cloudflare tunnel
+
+```bash
+# Check service status
+sudo systemctl status abhinav-portfolio.service
+sudo systemctl status cloudflared-tunnel.service
+
+# View logs
+sudo journalctl -u abhinav-portfolio.service -f
+sudo journalctl -u cloudflared-tunnel.service -f
+
+# Restart services
+sudo systemctl restart abhinav-portfolio.service
+sudo systemctl restart cloudflared-tunnel.service
+```
+
+### Security Features
+
+- Firewall configuration (UFW)
+- Fail2ban for intrusion prevention
+- Log rotation setup
+- Non-root user execution
+- Service isolation
+
 ## 🤝 Contributing
 
 1. Fork the repository
