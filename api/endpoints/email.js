@@ -89,7 +89,7 @@ router.get('/stats', (req, res) => {
     success: true,
     stats: {
       emailAddress: 'abhinav.allam@abhinavall.net',
-      forwardTo: process.env.FORWARD_EMAIL || 'abhinavall0123@gmail.com',
+      forwardTo: process.env.FORWARD_EMAIL || 'abhinav.allam@abhinavall.net',
       processorStatus: 'active',
       version: '1.0.0'
     }

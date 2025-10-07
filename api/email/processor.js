@@ -8,7 +8,7 @@ import { parseEmailHeaders, extractMetadata } from './utils.js';
 
 class EmailProcessor {
   constructor() {
-    this.forwardTo = process.env.FORWARD_EMAIL || 'abhinavall0123@gmail.com';
+    this.forwardTo = process.env.FORWARD_EMAIL || 'abhinav.allam@abhinavall.net';
     this.transporter = null;
     this.initializeTransporter();
   }

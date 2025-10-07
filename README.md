@@ -232,6 +232,6 @@ MIT License
 ## Author
 
 **Abhinav Allam**
-- Email: abhinavall0123@gmail.com
+- Email: abhinav.allam@abhinavall.net
 - GitHub: @kineticdirt
-- Portfolio: https://portfolio.abhinavall.net
+- Portfolio: https://abhinavall.net
