@@ -1,150 +1,147 @@
-# 🚀 Abhinav Allam - Modern Portfolio
+# Abhinav Allam - Portfolio
 
-A modern, responsive personal portfolio website showcasing AI/ML projects, software engineering skills, and professional experience. Built with vanilla HTML, CSS, and JavaScript using contemporary web development practices.
+Modern, responsive personal portfolio website showcasing AI/ML projects, software engineering skills, and professional experience. Built with vanilla HTML, CSS, and JavaScript.
 
-## 🌐 Live Demo
+## Live Deployments
 
-**🔗 [View Live Portfolio](https://kineticdirt.github.io/personal_portfolio/)**
+**Static Site (GitHub Pages)**: https://kineticdirt.github.io/personal_portfolio/
+**Dynamic Site (Cloudflare Tunnel)**: https://portfolio.abhinavall.net
 
-## ✨ Features
+## Architecture
 
-- **🎨 Modern Design**: Clean, contemporary UI with smooth animations
-- **🌙 Dark Mode**: Toggle between light and dark themes with system preference detection
-- **📱 Responsive**: Fully responsive design that works on all devices
-- **⚡ Performance**: Optimized for speed with modern web standards
-- **♿ Accessible**: WCAG compliant with proper ARIA attributes
-- **🔍 SEO Optimized**: Meta tags, semantic HTML, and structured data
-- **🧪 Tested**: Comprehensive test suite with Jest
-- **🚀 CI/CD**: Automated testing and deployment with GitHub Actions
+### Two Deployment Configurations
 
-## 🛠️ Tech Stack
+**1. Static Site (gh-pages branch)**
+- Pure static HTML/CSS/JS
+- Deployed to GitHub Pages
+- No server-side processing
+- Ideal for simple portfolio viewing
 
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
-- **Styling**: CSS Grid, Flexbox, Custom Properties, Modern CSS
-- **Icons**: Font Awesome 6
-- **Fonts**: Inter (primary), JetBrains Mono (code)
-- **Testing**: Jest, jsdom
-- **Linting**: ESLint, Stylelint, Prettier
-- **Deployment**: GitHub Pages, GitHub Actions
+**2. Dynamic Site (main branch)**
+- Express.js server with API endpoints
+- Deployed via Cloudflare Tunnel
+- Contact form processing
+- Analytics tracking
+- Server-side capabilities
 
-## 🚀 Quick Start
+## Tech Stack
+
+**Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
+**Backend**: Express.js, Node.js
+**Deployment**: GitHub Pages (static), Cloudflare Tunnel (dynamic)
+**Testing**: Jest, jsdom
+**Linting**: ESLint, Stylelint, Prettier
+
+## Quick Start
 
 ### Prerequisites
 
-- Node.js 16+ 
+- Node.js 16+
 - npm 8+
 
 ### Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/kineticdirt/personal_portfolio.git
 cd personal_portfolio
-
-# Install dependencies
 npm install
+```
 
-# Start development server
+### Development
+
+```bash
+# Static development (live-server)
 npm run dev
+
+# Dynamic development with API server (Express + nodemon)
+npm run dev:api
 ```
 
 ### Available Scripts
 
 ```bash
 # Development
-npm run dev          # Start development server
-npm start           # Alias for dev
+npm run dev          # Start static dev server (live-server)
+npm run dev:api      # Start API server with hot reload (nodemon)
+npm start            # Start production API server
+npm start:static     # Alias for npm run dev
 
 # Building
-npm run build       # Build and optimize for production
-npm run optimize    # Minify CSS and JS
-npm run preview     # Preview production build
+npm run build        # Run linting, tests, and optimization
+npm run optimize     # Minify CSS and JS
+npm run preview      # Preview production build
 
 # Quality Assurance
-npm run lint        # Run ESLint
-npm run lint:css    # Run Stylelint
-npm run test        # Run tests with coverage
-npm run test:watch  # Run tests in watch mode
-npm run validate    # Run all quality checks
+npm run lint         # Run ESLint
+npm run lint:css     # Run Stylelint
+npm run test         # Run tests with coverage
+npm run test:watch   # Run tests in watch mode
+npm run validate     # Run all quality checks
 
 # Deployment
-npm run deploy      # Deploy to GitHub Pages
-npm run clean       # Clean build artifacts
+npm run deploy:gh-pages  # Merge main to gh-pages and deploy
+npm run clean            # Clean build artifacts
+
+# Cloudflare Tunnel Management
+npm run tunnel:setup     # Full tunnel setup
+npm run tunnel:start     # Start services
+npm run tunnel:stop      # Stop services
+npm run tunnel:restart   # Restart services
+npm run tunnel:status    # Check service status
+npm run tunnel:logs      # View service logs
+npm run tunnel:update    # Pull updates and restart
+npm run install:deps     # Install system dependencies
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 personal_portfolio/
 ├── .github/
-│   ├── actions/           # Custom GitHub Actions
-│   └── workflows/         # CI/CD workflows
-├── __tests__/            # Test files
-├── assets/               # Static assets
-│   └── images/          # Image files
-├── .gitignore
-├── index.html           # Main HTML file
-├── styles.css           # Modern CSS with custom properties
-├── script.js            # ES6+ JavaScript application
-├── package.json         # Dependencies and scripts
-├── jest.config.js       # Jest configuration
-├── jest.setup.js        # Jest setup file
-└── README.md           # This file
+│   └── workflows/           # CI/CD for GitHub Pages
+├── __tests__/              # Test files
+├── api/
+│   ├── config/             # API configuration
+│   ├── endpoints/          # API endpoint modules
+│   ├── middleware/         # Express middleware
+│   └── server.js           # Express server entry point
+├── assets/
+│   └── images/             # Image files
+├── index.html              # Main HTML file
+├── styles.css              # Main CSS file
+├── script.js               # Client-side JavaScript
+├── cloudflare-tunnel.yml   # Cloudflare tunnel config
+├── deploy.sh               # Service management script
+├── setup-cloudflare-tunnel.sh  # Full setup script
+└── package.json            # Dependencies and scripts
 ```
 
-## 🎯 Key Sections
+## Static Site Deployment (GitHub Pages)
 
-- **🏠 Hero**: Dynamic greeting, code showcase, call-to-action
-- **👨‍💻 About**: Personal story, skills overview, statistics
-- **🚀 Projects**: Featured projects with tech stacks and links
-- **🛠️ Skills**: Categorized skills with proficiency levels
-- **📄 Resume**: Downloadable PDF and online preview
-- **📧 Contact**: Multiple contact methods and availability status
-
-## 🧪 Testing
-
-The project includes comprehensive tests for:
-
-- JavaScript functionality
-- DOM interactions
-- Accessibility features
-- Performance metrics
-- Cross-browser compatibility
+The static site automatically deploys when you push to the `gh-pages` branch:
 
 ```bash
-# Run all tests
-npm test
+# Method 1: Merge main to gh-pages
+npm run deploy:gh-pages
 
-# Run tests with coverage
-npm run test:ci
-
-# Run tests in watch mode
-npm run test:watch
+# Method 2: Manual merge
+git checkout gh-pages
+git merge main --no-edit
+git push origin gh-pages
+git checkout main
 ```
 
-## 🚀 Deployment
-
-The site is automatically deployed to GitHub Pages on every push to the main branch via GitHub Actions.
-
-### Manual Deployment
-
-```bash
-npm run deploy
-```
-
-## 🌐 Cloudflare Tunnel Deployment
-
-For remote access and custom domain deployment, this project includes Cloudflare tunnel setup for Linux servers.
+## Dynamic Site Deployment (Cloudflare Tunnel)
 
 ### Prerequisites
 
-- Linux server (Ubuntu/Debian recommended)
+- Linux server (Debian/Ubuntu)
 - Cloudflare account with Zero Trust enabled
-- Domain configured with Cloudflare DNS
+- Domain (abhinavall.net) configured with Cloudflare DNS
 
-### Quick Setup
+### Setup Steps
 
-1. **Clone the repository on your Linux server:**
+1. **Clone repository on server:**
    ```bash
    git clone https://github.com/kineticdirt/personal_portfolio.git
    cd personal_portfolio
@@ -156,64 +153,20 @@ For remote access and custom domain deployment, this project includes Cloudflare
    ```
 
 3. **Set up Cloudflare tunnel:**
-   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com) > Zero Trust > Access > Tunnels
+   - Go to Cloudflare Dashboard > Zero Trust > Access > Tunnels
    - Create a new tunnel named `abhinav-portfolio-tunnel`
    - Download the credentials file and save it as `~/.cloudflared/abhinav-portfolio-tunnel.json`
-   - Configure the tunnel with hostname: `portfolio.abhinavallam.com` (or your domain)
+   - Configure the tunnel with hostname: `portfolio.abhinavall.net`
 
 4. **Run the setup script:**
    ```bash
    npm run tunnel:setup
    ```
 
-### Available Tunnel Commands
-
-```bash
-# Setup and installation
-npm run tunnel:setup    # Full tunnel setup
-npm run install:deps    # Install system dependencies
-
-# Service management
-npm run tunnel:start    # Start services
-npm run tunnel:stop     # Stop services
-npm run tunnel:restart  # Restart services
-npm run tunnel:status   # Check service status
-npm run tunnel:logs     # View service logs
-npm run tunnel:update   # Pull updates and restart
-```
-
-### Manual Script Usage
-
-```bash
-# Make scripts executable
-chmod +x *.sh
-
-# Install dependencies
-./install-dependencies.sh
-
-# Setup tunnel
-./setup-cloudflare-tunnel.sh
-
-# Deploy and manage
-./deploy.sh start      # Start services
-./deploy.sh stop       # Stop services
-./deploy.sh restart    # Restart services
-./deploy.sh status     # Check status
-./deploy.sh logs       # View logs
-./deploy.sh update     # Update and restart
-```
-
-### Configuration Files
-
-- `cloudflare-tunnel.yml` - Tunnel configuration
-- `setup-cloudflare-tunnel.sh` - Full setup script
-- `deploy.sh` - Service management script
-- `install-dependencies.sh` - Dependency installation
-
 ### Service Management
 
 The setup creates two systemd services:
-- `abhinav-portfolio.service` - Portfolio web server
+- `abhinav-portfolio.service` - Express server on port 3000
 - `cloudflared-tunnel.service` - Cloudflare tunnel
 
 ```bash
@@ -230,42 +183,55 @@ sudo systemctl restart abhinav-portfolio.service
 sudo systemctl restart cloudflared-tunnel.service
 ```
 
-### Security Features
+### Quick Management Commands
 
-- Firewall configuration (UFW)
-- Fail2ban for intrusion prevention
-- Log rotation setup
-- Non-root user execution
-- Service isolation
+```bash
+./deploy.sh start      # Start services
+./deploy.sh stop       # Stop services
+./deploy.sh restart    # Restart services
+./deploy.sh status     # Check status
+./deploy.sh logs       # View logs
+./deploy.sh update     # Pull updates and restart
+```
 
-## 🤝 Contributing
+## API Endpoints
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+The dynamic site includes the following API endpoints:
 
-## 📄 License
+- `GET /api/health` - Health check endpoint
+- `POST /api/contact` - Contact form submission
+- `POST /api/analytics` - Analytics event tracking
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Testing
 
-## 👨‍💻 Author
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:ci
+
+# Run tests in watch mode
+npm run test:watch
+```
+
+## Configuration
+
+Create a `.env` file for environment-specific configuration:
+
+```bash
+NODE_ENV=production
+PORT=3000
+ALLOWED_ORIGINS=https://portfolio.abhinavall.net
+```
+
+## License
+
+MIT License
+
+## Author
 
 **Abhinav Allam**
 - Email: abhinavall0123@gmail.com
-- GitHub: [@kineticdirt](https://github.com/kineticdirt)
-- Portfolio: [kineticdirt.github.io/personal_portfolio](https://kineticdirt.github.io/personal_portfolio)
-
-## 🙏 Acknowledgments
-
-- Font Awesome for the amazing icons
-- Google Fonts for the beautiful typography
-- GitHub Actions for seamless CI/CD
-- The open-source community for inspiration
-
----
-
-⭐ **Star this repository if you found it helpful!**
-
-🔗 **Connect with me**: [LinkedIn](https://linkedin.com/in/abhinav-allam) | [Email](mailto:abhinavall0123@gmail.com)
+- GitHub: @kineticdirt
+- Portfolio: https://portfolio.abhinavall.net
