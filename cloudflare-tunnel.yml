@@ -1,5 +1,5 @@
-tunnel: abhinav-portfolio-tunnel
-credentials-file: /home/abhinav/.cloudflared/abhinav-portfolio-tunnel.json
+tunnel: d44dd249-4873-40fe-a147-457b69949190
+credentials-file: /home/abhinav/.cloudflared/d44dd249-4873-40fe-a147-457b69949190.json
 
 ingress:
   - hostname: portfolio.abhinavall.net
