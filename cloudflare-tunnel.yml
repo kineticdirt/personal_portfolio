@@ -2,8 +2,12 @@ tunnel: d44dd249-4873-40fe-a147-457b69949190
 credentials-file: /home/abhinav/.cloudflared/d44dd249-4873-40fe-a147-457b69949190.json
 
 ingress:
+  - hostname: abhinavall.net
+    service: http://localhost:3000
+    originRequest:
+      httpHostHeader: abhinavall.net
   - hostname: portfolio.abhinavall.net
     service: http://localhost:3000
     originRequest:
-      httpHostHeader: portfolio.abhinavall.net
+      httpHostHeader: abhinavall.net
   - service: http_status:404
