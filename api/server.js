@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
+import emailRouter from './endpoints/email.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,11 +18,14 @@ app.use(helmet({
 }));
 app.use(cors());
 app.use(compression());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '10mb' })); // Increased limit for email content
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Serve static files from the root directory
 app.use(express.static(path.join(__dirname, '..')));
+
+// Email API Routes
+app.use('/api/email', emailRouter);
 
 // API Routes
 app.get('/api/health', (req, res) => {
