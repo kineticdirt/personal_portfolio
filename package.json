@@ -6,8 +6,11 @@
   "type": "module",
   "scripts": {
     "dev": "live-server --port=3000 --open=/",
-    "start": "npm run dev",
+    "dev:api": "NODE_ENV=development nodemon api/server.js",
+    "start": "node api/server.js",
+    "start:static": "npm run dev",
     "build": "npm run lint && npm run test && npm run optimize",
+    "build:static": "npm run build",
     "optimize": "npm run minify-css && npm run minify-js",
     "minify-css": "cleancss -o dist/styles.min.css styles.css",
     "minify-js": "terser script.js -o dist/script.min.js -c -m",
@@ -17,10 +20,9 @@
     "test:watch": "jest --watch",
     "test:ci": "jest --ci --coverage --watchAll=false",
     "validate": "npm run lint && npm run lint:css && npm run test",
-    "deploy": "npm run build && gh-pages -d .",
+    "deploy:gh-pages": "git checkout gh-pages && git merge main --no-edit && git push origin gh-pages && git checkout main",
     "preview": "live-server --port=8080 --open=/dist/",
     "clean": "rimraf dist coverage",
-    "postinstall": "npm run validate",
     "tunnel:setup": "chmod +x setup-cloudflare-tunnel.sh && ./setup-cloudflare-tunnel.sh",
     "tunnel:start": "chmod +x deploy.sh && ./deploy.sh start",
     "tunnel:stop": "chmod +x deploy.sh && ./deploy.sh stop",
@@ -75,7 +77,14 @@
     "terser": "^5.24.0"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.0.2"
   },
   "prettier": {
     "semi": true,

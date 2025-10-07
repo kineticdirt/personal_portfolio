@@ -78,7 +78,7 @@ cd ~/personal_portfolio
 
 #### 2.3 Configure Public Hostname
 1. In tunnel configuration, click **Public hostname**
-2. Add hostname: `portfolio.abhinavallam.com` (or your domain)
+2. Add hostname: `portfolio.abhinavall.net`
 3. Service: `http://localhost:3000`
 4. Click **Save hostname**
 
@@ -152,7 +152,7 @@ cloudflared tunnel --config ~/.cloudflared/config.yml run
 ls -la ~/.cloudflared/abhinav-portfolio-tunnel.json
 
 # Verify DNS resolution
-nslookup portfolio.abhinavallam.com
+nslookup portfolio.abhinavall.net
 ```
 
 #### Port Issues
@@ -225,5 +225,5 @@ If you encounter issues:
 
 ---
 
-**🎉 Your portfolio should now be accessible at: https://portfolio.abhinavallam.com**
+**Your portfolio should now be accessible at: https://portfolio.abhinavall.net**
 

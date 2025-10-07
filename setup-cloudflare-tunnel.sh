@@ -76,7 +76,7 @@ if [ ! -f ~/.cloudflared/abhinav-portfolio-tunnel.json ]; then
     print_status "1. Go to Cloudflare Dashboard > Zero Trust > Access > Tunnels"
     print_status "2. Create a new tunnel named 'abhinav-portfolio-tunnel'"
     print_status "3. Download the credentials file and save it as ~/.cloudflared/abhinav-portfolio-tunnel.json"
-    print_status "4. Configure the tunnel with hostname: portfolio.abhinavallam.com"
+    print_status "4. Configure the tunnel with hostname: portfolio.abhinavall.net"
     print_status "5. Run this script again"
     exit 1
 fi
@@ -89,17 +89,18 @@ print_success "Tunnel configuration copied to ~/.cloudflared/config.yml"
 print_status "Creating systemd service for the portfolio..."
 sudo tee /etc/systemd/system/abhinav-portfolio.service > /dev/null <<EOF
 [Unit]
-Description=Abhinav's Portfolio Website
+Description=Abhinav's Portfolio Website with API
 After=network.target
 
 [Service]
 Type=simple
 User=$USER
 WorkingDirectory=$(pwd)
-ExecStart=/usr/bin/npm run dev
+ExecStart=/usr/bin/npm start
 Restart=always
 RestartSec=10
 Environment=NODE_ENV=production
+Environment=PORT=3000
 
 [Install]
 WantedBy=multi-user.target
@@ -164,6 +165,6 @@ echo "  • View tunnel logs: sudo journalctl -u cloudflared-tunnel.service -f"
 echo "  • Restart portfolio: sudo systemctl restart abhinav-portfolio.service"
 echo "  • Restart tunnel: sudo systemctl restart cloudflared-tunnel.service"
 echo ""
-print_status "Your portfolio should be accessible at: https://portfolio.abhinavallam.com"
+print_status "Your portfolio should be accessible at: https://portfolio.abhinavall.net"
 echo ""
 print_warning "Make sure your domain DNS is pointing to Cloudflare and the tunnel is properly configured in the Cloudflare dashboard!"
