@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Allam - Resume Collection</title>
+    <meta name="description" content="Download resumes and CVs for Abhinav Allam - AI/ML Engineer and Software Developer">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .resume-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .resume-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .resume-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .resume-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .resume-card h2 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .resume-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-link a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .resume-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 Resume Collection</h1>
+            <p>Download my resumes tailored for different roles and opportunities</p>
+        </div>
+
+        <div class="resume-grid">
+            <div class="resume-card">
+                <div class="resume-icon">🤖</div>
+                <h2>AI/ML Focused</h2>
+                <p>Comprehensive resume highlighting machine learning projects, deep learning experience, and AI research work.</p>
+                <a href="assets/documents/Resume_AI_ML.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+
+            <div class="resume-card">
+                <div class="resume-icon">📊</div>
+                <h2>AI/ML Detailed</h2>
+                <p>Extended version with in-depth project descriptions, technical implementations, and research contributions.</p>
+                <a href="assets/documents/Resume_AI_ML_DETAIL.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+
+            <div class="resume-card">
+                <div class="resume-icon">📈</div>
+                <h2>AI/ML Large Format</h2>
+                <p>Full portfolio-style resume with expanded sections, publications, certifications, and project portfolios.</p>
+                <a href="assets/documents/Resume_AI_ML_V4_Large.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="https://abhinavall.net">← Back to Main Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
+
