@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-Delta Bot Detection Model | Abhinav Allam</title>
+    <meta name="description" content="Advanced ML model for detecting subtle bot patterns using time-delta analysis">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <img src="assets/images/loading.gif" alt="Loading..." class="loading-gif">
+            <h2 class="loading-text">Loading Project Details</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <span class="brand-text">Abhinav Allam</span>
+                </a>
+            </div>
+            <ul class="nav-menu" role="menubar">
+                <li class="nav-item" role="none">
+                    <a href="index.html" class="nav-link" role="menuitem">Home</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="index.html#projects" class="nav-link active" role="menuitem">Projects</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="index.html#contact" class="nav-link" role="menuitem">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <button id="qr-code-btn" class="qr-code-toggle" aria-label="View Resume QR Code">
+                    <i class="fas fa-qrcode"></i>
+                </button>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content project-detail-page">
+        <section class="project-hero">
+            <div class="project-hero-background" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.3) 0%, rgba(251, 146, 60, 0.3) 100%), url('assets/images/ai-generated-8672811_1280.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="container">
+                <div class="project-hero-content">
+                    <div class="project-breadcrumb">
+                        <a href="index.html">Home</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="index.html#projects">Projects</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Bot Detection</span>
+                    </div>
+                    <h1 class="project-hero-title">Time-Delta Bot Detection Model</h1>
+                    <p class="project-hero-subtitle">Advanced ML Model for Detecting Subtle Bot Patterns</p>
+                    <div class="project-hero-meta">
+                        <span class="meta-item"><i class="fas fa-building"></i> Cequence Security</span>
+                        <span class="meta-item"><i class="fas fa-calendar"></i> 2023</span>
+                        <span class="meta-item"><i class="fas fa-check-circle"></i> Production</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <div class="project-content-grid">
+                    <div class="project-main-content">
+                        <h2>Project Overview</h2>
+                        <p>
+                            Designed and deployed a novel Time-Delta model to detect subtle bot patterns in API traffic using 
+                            <strong>PyTorch with CUDA acceleration</strong>. This advanced machine learning model enables real-time 
+                            bot detection at scale for Cequence Security's Unified API Protection (UAP) Platform, protecting 
+                            enterprise applications from automated attacks.
+                        </p>
+
+                        <h3>Challenge</h3>
+                        <p>
+                            Traditional bot detection methods struggle with sophisticated bots that mimic human behavior patterns. 
+                            The initial model achieved only 18% accuracy due to the subtle nature of time-delta patterns in bot traffic. 
+                            Our challenge was to significantly improve detection accuracy while maintaining real-time performance 
+                            requirements for production deployment.
+                        </p>
+
+                        <h3>Solution</h3>
+                        <p>
+                            I engineered sophisticated preprocessing and feature extraction pipelines using advanced time-delta analysis 
+                            techniques. By focusing on temporal patterns in API requests and applying rigorous feature engineering, 
+                            I achieved a breakthrough in detection accuracy.
+                        </p>
+
+                        <h3>Technical Implementation</h3>
+                        <h4>Core Technologies</h4>
+                        <ul>
+                            <li><strong>PyTorch with CUDA:</strong> GPU-accelerated deep learning framework for real-time inference</li>
+                            <li><strong>Pandas & NumPy:</strong> High-performance data preprocessing and feature engineering</li>
+                            <li><strong>Advanced Cross-Validation:</strong> Rigorous model evaluation and hyperparameter tuning</li>
+                            <li><strong>Time-Series Analysis:</strong> Temporal pattern recognition in API request sequences</li>
+                        </ul>
+
+                        <h4>Key Innovations</h4>
+                        <ul>
+                            <li><strong>Time-Delta Feature Engineering:</strong> Created novel features capturing temporal request patterns</li>
+                            <li><strong>77% Accuracy Improvement:</strong> Lifted model accuracy from 18% to 32% through iterative optimization</li>
+                            <li><strong>GPU Acceleration:</strong> Leveraged CUDA for real-time inference on production traffic</li>
+                            <li><strong>Automated Reporting:</strong> Built comprehensive daily reporting system with Google Cloud integration</li>
+                            <li><strong>Production Integration:</strong> Seamlessly integrated with Cequence's UAP Platform</li>
+                        </ul>
+
+                        <h3>Development Process</h3>
+                        <ol>
+                            <li><strong>Data Analysis:</strong> Analyzed millions of API requests to identify bot patterns</li>
+                            <li><strong>Feature Engineering:</strong> Developed time-delta features capturing subtle behavioral patterns</li>
+                            <li><strong>Model Architecture:</strong> Designed neural network optimized for temporal pattern recognition</li>
+                            <li><strong>Hyperparameter Tuning:</strong> Systematic optimization using cross-validation techniques</li>
+                            <li><strong>Performance Optimization:</strong> CUDA acceleration for sub-millisecond inference times</li>
+                            <li><strong>Production Deployment:</strong> Integration testing and rollout to production environment</li>
+                        </ol>
+
+                        <h3>Results & Impact</h3>
+                        <ul>
+                            <li><strong>77% Accuracy Improvement:</strong> From 18% to 32% detection rate</li>
+                            <li><strong>Real-Time Performance:</strong> GPU-accelerated inference for production-scale traffic</li>
+                            <li><strong>50% Reduced Manual Effort:</strong> Automated reporting system streamlined operations</li>
+                            <li><strong>Production Deployment:</strong> Successfully deployed to protect enterprise clients</li>
+                            <li><strong>Scalable Architecture:</strong> Handles millions of requests per day</li>
+                        </ul>
+
+                        <h3>Technical Challenges Overcome</h3>
+                        <ul>
+                            <li>Handling highly imbalanced datasets with rare bot patterns</li>
+                            <li>Optimizing for both accuracy and inference speed requirements</li>
+                            <li>Managing GPU memory efficiently for large-scale processing</li>
+                            <li>Reducing false positives while improving true positive detection</li>
+                        </ul>
+
+                        <h3>Lessons Learned</h3>
+                        <p>
+                            This project demonstrated the power of domain-specific feature engineering in machine learning. 
+                            By deeply understanding the temporal patterns of bot behavior and translating that knowledge into 
+                            effective features, we achieved significant improvements over generic approaches. The experience 
+                            reinforced the importance of iterative optimization and rigorous evaluation in production ML systems.
+                        </p>
+                    </div>
+
+                    <div class="project-sidebar">
+                        <div class="sidebar-card">
+                            <h3>Technologies Used</h3>
+                            <div class="tech-list">
+                                <span class="tech-badge">PyTorch</span>
+                                <span class="tech-badge">CUDA</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Pandas</span>
+                                <span class="tech-badge">NumPy</span>
+                                <span class="tech-badge">ML</span>
+                                <span class="tech-badge">Google Cloud</span>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Project Stats</h3>
+                            <div class="stat-list">
+                                <div class="stat-item">
+                                    <span class="stat-label">Accuracy Gain</span>
+                                    <span class="stat-value">+77%</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Status</span>
+                                    <span class="stat-value">Production</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Company</span>
+                                    <span class="stat-value">Cequence</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Impact</h3>
+                            <p class="team-description">
+                                Deployed in production environment protecting enterprise applications from sophisticated bot attacks. 
+                                The model processes millions of API requests daily, providing real-time protection for Fortune 500 clients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-projects-section">
+            <div class="container">
+                <h2 class="section-title">Related Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%), url('assets/images/ai-generated-9023805_1280.jpg'); background-size: cover;">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="project-ai-chatbot.html" class="project-link"><i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Chatbot Platform</h3>
+                            <p class="project-description">Intelligent conversational interface for UAP Platform</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(219, 39, 119, 0.2) 100%), url('assets/images/computer-4405766_1280.jpg'); background-size: cover;">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="project-rag-models.html" class="project-link"><i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">RAG Models & Agentic AI</h3>
+                            <p class="project-description">Advanced retrieval-augmented generation systems</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Abhinav Allam. Built with passion and modern web technologies.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/kineticdirt" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="mailto:abhinav.allam@abhinavall.net"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="qr-code-modal" class="admin-modal" style="display: none;">
+        <div class="admin-modal-content qr-modal-content">
+            <div class="admin-modal-header">
+                <h3>Resume Downloads</h3>
+                <button id="close-qr-modal" class="admin-close">&times;</button>
+            </div>
+            <div class="admin-modal-body qr-modal-body">
+                <p class="qr-description">Scan this QR code to access my resume downloads page</p>
+                <div id="qrcode" class="qr-code-container"></div>
+                <div class="qr-link-container">
+                    <p class="qr-url">https://kineticdirt.github.io/personal_portfolio/</p>
+                    <a href="https://kineticdirt.github.io/personal_portfolio/" target="_blank" rel="noopener" class="btn btn-primary">
+                        <span>Visit Resume Page</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

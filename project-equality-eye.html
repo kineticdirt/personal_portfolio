@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EQUALITY EYE - Hate Speech Detector | Abhinav Allam</title>
+    <meta name="description" content="AI-driven hate speech detection system achieving 94% accuracy using DistilBERT">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Modern Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <img src="assets/images/loading.gif" alt="Loading..." class="loading-gif">
+            <h2 class="loading-text">Loading Project Details</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <span class="brand-text">Abhinav Allam</span>
+                </a>
+            </div>
+            <ul class="nav-menu" role="menubar">
+                <li class="nav-item" role="none">
+                    <a href="index.html" class="nav-link" role="menuitem">Home</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="index.html#projects" class="nav-link active" role="menuitem">Projects</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="index.html#contact" class="nav-link" role="menuitem">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <button id="qr-code-btn" class="qr-code-toggle" aria-label="View Resume QR Code" title="Resume QR Code">
+                    <i class="fas fa-qrcode"></i>
+                </button>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content project-detail-page">
+        <!-- Project Hero Section -->
+        <section class="project-hero">
+            <div class="project-hero-background" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(168, 85, 247, 0.3) 100%), url('assets/images/ai-generated-8993116_1280.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="container">
+                <div class="project-hero-content">
+                    <div class="project-breadcrumb">
+                        <a href="index.html">Home</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="index.html#projects">Projects</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>EQUALITY EYE</span>
+                    </div>
+                    <h1 class="project-hero-title">EQUALITY EYE</h1>
+                    <p class="project-hero-subtitle">AI-Driven Hate Speech Detection for Social Impact</p>
+                    <div class="project-hero-meta">
+                        <span class="meta-item"><i class="fas fa-trophy"></i> 1st Place - Social Impact</span>
+                        <span class="meta-item"><i class="fas fa-calendar"></i> RoseHack @ UCR 2024</span>
+                        <span class="meta-item"><i class="fas fa-chart-line"></i> 94% Accuracy</span>
+                    </div>
+                    <div class="project-hero-actions">
+                        <a href="https://github.com/DMahamedi/RoseHack-2024" target="_blank" rel="noopener" class="btn btn-primary">
+                            <i class="fab fa-github"></i>
+                            <span>View on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="project-section">
+            <div class="container">
+                <div class="project-content-grid">
+                    <div class="project-main-content">
+                        <h2>Project Overview</h2>
+                        <p>
+                            EQUALITY EYE is a powerful Chrome extension that leverages advanced machine learning to detect 
+                            and classify misogynistic content on Twitter (X) in real-time. Built during RoseHack 2024, 
+                            this project secured <strong>first place in the Social Impact category</strong> by addressing 
+                            the critical issue of online harassment and creating a safer digital environment.
+                        </p>
+                        
+                        <h3>Inspiration</h3>
+                        <p>
+                            Inspired by RoseHack's mission of empowering women in STEM, EQUALITY EYE was created to tackle 
+                            the pervasive challenges that women face in online spaces. RoseHack stands as a beacon of 
+                            transformative empowerment, fearlessly addressing obstacles and sculpting a future where women 
+                            not only thrive but redefine excellence in science and technology.
+                        </p>
+
+                        <h3>How It Works</h3>
+                        <p>
+                            The system employs a sophisticated three-tier architecture:
+                        </p>
+                        <ol>
+                            <li>
+                                <strong>Chrome Extension Frontend:</strong> Automatically extracts text content from tweets 
+                                in your Twitter feed as you browse.
+                            </li>
+                            <li>
+                                <strong>FastAPI Backend Server:</strong> Processes incoming tweet data and coordinates with 
+                                the ML model for real-time classification.
+                            </li>
+                            <li>
+                                <strong>DistilBERT Model:</strong> Fine-tuned transformer model that analyzes content and 
+                                identifies misogynistic language with 94% accuracy.
+                            </li>
+                        </ol>
+
+                        <h3>Technical Implementation</h3>
+                        
+                        <h4>Machine Learning Model</h4>
+                        <p>
+                            We fine-tuned an open-source DistilBERT transformer model from Hugging Face, training it on 
+                            carefully curated datasets of social media posts from Reddit compiled by academic researchers. 
+                            The model achieved an impressive <strong>94% accuracy rate</strong> on our test dataset.
+                        </p>
+                        <p>
+                            The training process involved sophisticated preprocessing and feature extraction techniques, 
+                            enabling the model to understand nuanced language patterns and contextual cues that indicate 
+                            misogynistic content.
+                        </p>
+
+                        <h4>Browser Extension</h4>
+                        <p>
+                            Built using vanilla JavaScript, the Chrome extension seamlessly integrates with Twitter's interface. 
+                            Key features include:
+                        </p>
+                        <ul>
+                            <li>Automatic text extraction from tweet elements using DOM manipulation</li>
+                            <li>Real-time API communication with the backend server</li>
+                            <li>Visual indicators for flagged content</li>
+                            <li>Minimal performance overhead to ensure smooth browsing</li>
+                        </ul>
+
+                        <h4>Backend Architecture</h4>
+                        <p>
+                            The FastAPI backend provides a robust, high-performance API layer that:
+                        </p>
+                        <ul>
+                            <li>Handles concurrent requests from multiple users</li>
+                            <li>Manages model loading and inference optimization</li>
+                            <li>Implements caching strategies for improved response times</li>
+                            <li>Provides RESTful endpoints for extension communication</li>
+                        </ul>
+
+                        <h3>Challenges & Solutions</h3>
+                        
+                        <h4>Model Loading Issues</h4>
+                        <p>
+                            Our biggest technical challenge involved PyTorch's inability to properly load our specially 
+                            defined DistilBERT class. After extensive debugging and research, we resolved this by 
+                            restructuring the model's class definition and adjusting the serialization process.
+                        </p>
+
+                        <h4>Backend Deployment</h4>
+                        <p>
+                            We spent over 6 hours troubleshooting backend server deployment issues, including:
+                        </p>
+                        <ul>
+                            <li>CORS configuration for cross-origin requests from the extension</li>
+                            <li>Model file size limitations (the .bin file was too large for GitHub)</li>
+                            <li>Server hosting and endpoint accessibility</li>
+                            <li>Proper error handling and response formatting</li>
+                        </ul>
+
+                        <h4>Data Scarcity</h4>
+                        <p>
+                            Finding high-quality, labeled training data for misogynistic content detection was challenging. 
+                            We overcame this by combining multiple academic datasets and implementing data augmentation 
+                            techniques to improve model generalization.
+                        </p>
+
+                        <h3>Achievements</h3>
+                        <ul>
+                            <li><strong>94% Classification Accuracy</strong> on test dataset</li>
+                            <li><strong>1st Place Social Impact Award</strong> at RoseHack 2024</li>
+                            <li><strong>Reliable Real-time Detection</strong> across Twitter platform</li>
+                            <li><strong>Scalable Architecture</strong> supporting multiple concurrent users</li>
+                            <li><strong>Open-source Contribution</strong> to the women in STEM community</li>
+                        </ul>
+
+                        <h3>Impact</h3>
+                        <p>
+                            EQUALITY EYE represents a meaningful step toward creating safer online spaces for women. 
+                            By automatically detecting and flagging harmful content, the tool empowers users to make 
+                            informed decisions about their social media experience and contributes to raising awareness 
+                            about online harassment patterns.
+                        </p>
+
+                        <h3>Future Enhancements</h3>
+                        <ul>
+                            <li>Support for additional social media platforms (Facebook, Instagram, TikTok)</li>
+                            <li>Multi-language detection capabilities</li>
+                            <li>User feedback mechanism for continuous model improvement</li>
+                            <li>Privacy-preserving on-device inference</li>
+                            <li>Advanced filtering and customization options</li>
+                            <li>Integration with content moderation tools</li>
+                        </ul>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="project-sidebar">
+                        <div class="sidebar-card">
+                            <h3>Technologies Used</h3>
+                            <div class="tech-list">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">DistilBERT</span>
+                                <span class="tech-badge">Hugging Face</span>
+                                <span class="tech-badge">PyTorch</span>
+                                <span class="tech-badge">FastAPI</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">HTML/CSS</span>
+                                <span class="tech-badge">Chrome Extension API</span>
+                                <span class="tech-badge">Machine Learning</span>
+                                <span class="tech-badge">NLP</span>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Project Stats</h3>
+                            <div class="stat-list">
+                                <div class="stat-item">
+                                    <span class="stat-label">Accuracy</span>
+                                    <span class="stat-value">94%</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Award</span>
+                                    <span class="stat-value">1st Place</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Category</span>
+                                    <span class="stat-value">Social Impact</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Model</span>
+                                    <span class="stat-value">DistilBERT</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Links</h3>
+                            <div class="link-list">
+                                <a href="https://github.com/DMahamedi/RoseHack-2024" target="_blank" rel="noopener" class="sidebar-link">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub Repository</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Team</h3>
+                            <p class="team-description">
+                                Built collaboratively during RoseHack 2024 hackathon at UC Riverside, 
+                                with contributions from multiple team members passionate about creating 
+                                positive social impact through technology.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Projects -->
+        <section class="related-projects-section">
+            <div class="container">
+                <h2 class="section-title">Related Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%), url('assets/images/ai-generated-9023805_1280.jpg'); background-size: cover; background-position: center;">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="project-ai-chatbot.html" class="project-link" aria-label="View project">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">LLM</span>
+                                <span class="tech-tag">Java</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Chatbot - Cequence UAP Platform</h3>
+                            <p class="project-description">
+                                Intelligent conversational interface integrated into Cequence Security's platform.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(219, 39, 119, 0.2) 100%), url('assets/images/computer-4405766_1280.jpg'); background-size: cover; background-position: center;">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="project-rag-models.html" class="project-link" aria-label="View project">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">RAG</span>
+                                <span class="tech-tag">AI</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">RAG Models & Agentic AI</h3>
+                            <p class="project-description">
+                                Advanced retrieval-augmented generation with autonomous decision-making.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Abhinav Allam. Built with passion and modern web technologies.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/kineticdirt" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:abhinav.allam@abhinavall.net" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- QR Code Modal -->
+    <div id="qr-code-modal" class="admin-modal" style="display: none;">
+        <div class="admin-modal-content qr-modal-content">
+            <div class="admin-modal-header">
+                <h3>Resume Downloads</h3>
+                <button id="close-qr-modal" class="admin-close">&times;</button>
+            </div>
+            <div class="admin-modal-body qr-modal-body">
+                <p class="qr-description">Scan this QR code to access my resume downloads page</p>
+                <div id="qrcode" class="qr-code-container"></div>
+                <div class="qr-link-container">
+                    <p class="qr-url">https://kineticdirt.github.io/personal_portfolio/</p>
+                    <a href="https://kineticdirt.github.io/personal_portfolio/" target="_blank" rel="noopener" class="btn btn-primary">
+                        <span>Visit Resume Page</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

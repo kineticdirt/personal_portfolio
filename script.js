@@ -10,19 +10,26 @@ class PortfolioApp {
     }
 
     init() {
-        this.setupEventListeners();
-        this.initializeTheme();
-        this.setupScrollSpy();
-        this.setupAnimations();
-        this.setupResumePreview();
-        this.setupMobileMenu();
-        this.setupSmoothScrolling();
-        this.initializeGreeting();
-        this.setupAdminSystem();
-        this.setupExperienceExpansion();
-        this.setupPDFUpload();
-        this.setupRadialGrid();
-        this.setupScrollArrow();
+        // Essential features that should always work
+        try { this.setupEventListeners(); } catch(e) { console.warn('setupEventListeners failed:', e); }
+        try { this.initializeTheme(); } catch(e) { console.warn('initializeTheme failed:', e); }
+        try { this.setupMobileMenu(); } catch(e) { console.warn('setupMobileMenu failed:', e); }
+        try { this.setupQRCode(); } catch(e) { console.warn('setupQRCode failed:', e); }
+        try { this.setupFeedbackSystem(); } catch(e) { console.warn('setupFeedbackSystem failed:', e); }
+        try { this.setupFeedbackSummary(); } catch(e) { console.warn('setupFeedbackSummary failed:', e); }
+        try { this.setupLiveContactData(); } catch(e) { console.warn('setupLiveContactData failed:', e); }
+        
+        // Page-specific features that may not exist
+        try { this.setupScrollSpy(); } catch(e) { console.warn('setupScrollSpy failed:', e); }
+        try { this.setupAnimations(); } catch(e) { console.warn('setupAnimations failed:', e); }
+        try { this.setupResumePreview(); } catch(e) { console.warn('setupResumePreview failed:', e); }
+        try { this.setupSmoothScrolling(); } catch(e) { console.warn('setupSmoothScrolling failed:', e); }
+        try { this.initializeGreeting(); } catch(e) { console.warn('initializeGreeting failed:', e); }
+        try { this.setupAdminSystem(); } catch(e) { console.warn('setupAdminSystem failed:', e); }
+        try { this.setupExperienceExpansion(); } catch(e) { console.warn('setupExperienceExpansion failed:', e); }
+        try { this.setupPDFUpload(); } catch(e) { console.warn('setupPDFUpload failed:', e); }
+        try { this.setupRadialGrid(); } catch(e) { console.warn('setupRadialGrid failed:', e); }
+        try { this.setupScrollArrow(); } catch(e) { console.warn('setupScrollArrow failed:', e); }
     }
 
     // Theme Management
@@ -221,6 +228,8 @@ class PortfolioApp {
     // Scroll Spy
     setupScrollSpy() {
         const sections = document.querySelectorAll("section[id]");
+        if (!sections.length) return;
+        const sections = document.querySelectorAll("section[id]");
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -355,6 +364,123 @@ class PortfolioApp {
     }
 
     // Admin System
+    // Feedback Summary Viewer
+    setupFeedbackSummary() {
+        const summaryBtn = document.getElementById('feedback-summary-btn');
+        const summaryModal = document.getElementById('feedback-summary-modal');
+        const closeSummaryModal = document.getElementById('close-summary-modal');
+
+        if (!summaryBtn || !summaryModal) return;
+
+        // Open feedback summary
+        summaryBtn.addEventListener('click', async () => {
+            summaryModal.style.display = 'flex';
+            await this.loadFeedbackSummary();
+        });
+
+        // Close modal
+        const closeModal = () => {
+            summaryModal.style.display = 'none';
+        };
+
+        closeSummaryModal?.addEventListener('click', closeModal);
+        
+        // Close on outside click
+        summaryModal.addEventListener('click', (e) => {
+            if (e.target === summaryModal) {
+                closeModal();
+            }
+        });
+    }
+
+    async loadFeedbackSummary() {
+        try {
+            const response = await fetch('/api/feedback/stats');
+            const data = await response.json();
+
+            if (data.success) {
+                const stats = data.stats;
+
+                // Update statistics
+                document.getElementById('total-feedback').textContent = stats.total || 0;
+                document.getElementById('bug-count').textContent = stats.byType.bug || 0;
+                document.getElementById('feature-count').textContent = stats.byType.feature || 0;
+                document.getElementById('praise-count').textContent = stats.byType.praise || 0;
+
+                // Display recent feedback
+                const recentList = document.getElementById('recent-feedback-list');
+                if (stats.recent && stats.recent.length > 0) {
+                    recentList.innerHTML = stats.recent.map(fb => `
+                        <div class="feedback-item">
+                            <div class="feedback-item-header">
+                                <span class="feedback-item-name">${fb.name}</span>
+                                <span class="feedback-item-type ${fb.type}">${fb.type}</span>
+                            </div>
+                            <div class="feedback-item-message">${fb.message}</div>
+                            <div class="feedback-item-meta">
+                                ${fb.email} • ${new Date(fb.submittedAt).toLocaleDateString()}
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    recentList.innerHTML = '<p style="text-align: center; color: var(--text-muted);">No feedback yet</p>';
+                }
+            }
+        } catch (error) {
+            console.error('Error loading feedback summary:', error);
+            document.getElementById('recent-feedback-list').innerHTML = 
+                '<p style="text-align: center; color: var(--text-muted);">Error loading feedback</p>';
+        }
+    }
+
+    // Live Contact Data Integration
+    async setupLiveContactData() {
+        // Fetch GitHub data
+        await this.fetchGitHubData();
+        
+        // Set up observer to refresh data when contact section becomes visible
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        this.fetchGitHubData();
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(contactSection);
+        }
+    }
+
+    async fetchGitHubData() {
+        try {
+            const response = await fetch('https://api.github.com/users/kineticdirt');
+            const data = await response.json();
+
+            if (data) {
+                const usernameEl = document.getElementById('github-username');
+                const statsEl = document.getElementById('github-stats');
+
+                if (usernameEl && data.name) {
+                    usernameEl.textContent = data.name;
+                }
+
+                if (statsEl) {
+                    const repos = data.public_repos || 0;
+                    const followers = data.followers || 0;
+                    statsEl.textContent = `${repos} repositories • ${followers} followers`;
+                }
+            }
+        } catch (error) {
+            console.error('Error fetching GitHub data:', error);
+            const statsEl = document.getElementById('github-stats');
+            if (statsEl) {
+                statsEl.textContent = '@kineticdirt • View Profile';
+            }
+        }
+    }
+
     setupAdminSystem() {
         this.isAdminLoggedIn = false;
         this.adminCredentials = {
@@ -985,6 +1111,146 @@ class PortfolioApp {
             });
         }
     }
+
+    // Feedback System
+    setupFeedbackSystem() {
+        const feedbackBtn = document.getElementById('feedback-btn');
+        const feedbackModal = document.getElementById('feedback-modal');
+        const closeFeedbackModal = document.getElementById('close-feedback-modal');
+        const cancelFeedback = document.getElementById('cancel-feedback');
+        const feedbackForm = document.getElementById('feedback-form');
+        const feedbackStatus = document.getElementById('feedback-status');
+
+        if (!feedbackBtn || !feedbackModal || !feedbackForm) return;
+
+        // Open feedback modal
+        feedbackBtn.addEventListener('click', () => {
+            feedbackModal.style.display = 'flex';
+            feedbackForm.reset();
+            feedbackStatus.className = 'feedback-status';
+            feedbackStatus.textContent = '';
+        });
+
+        // Close feedback modal
+        const closeFeedback = () => {
+            feedbackModal.style.display = 'none';
+        };
+
+        closeFeedbackModal?.addEventListener('click', closeFeedback);
+        cancelFeedback?.addEventListener('click', closeFeedback);
+
+        // Close on outside click
+        feedbackModal.addEventListener('click', (e) => {
+            if (e.target === feedbackModal) {
+                closeFeedback();
+            }
+        });
+
+        // Handle form submission
+        feedbackForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('feedback-name').value.trim(),
+                email: document.getElementById('feedback-email').value.trim(),
+                linkedin: document.getElementById('feedback-linkedin').value.trim(),
+                type: document.getElementById('feedback-type').value,
+                message: document.getElementById('feedback-message').value.trim(),
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent,
+                pageUrl: window.location.href
+            };
+
+            // Validate mandatory fields
+            if (!formData.name || !formData.email || !formData.type || !formData.message) {
+                feedbackStatus.className = 'feedback-status error';
+                feedbackStatus.textContent = 'Please fill in all required fields.';
+                return;
+            }
+
+            // Validate email or LinkedIn (at least one must be provided)
+            if (!formData.email && !formData.linkedin) {
+                feedbackStatus.className = 'feedback-status error';
+                feedbackStatus.textContent = 'Please provide either email or LinkedIn profile.';
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/feedback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    feedbackStatus.className = 'feedback-status success';
+                    feedbackStatus.textContent = 'Thank you! Your feedback has been received.';
+                    feedbackForm.reset();
+                    
+                    // Close modal after 2 seconds
+                    setTimeout(() => {
+                        closeFeedback();
+                    }, 2000);
+                } else {
+                    throw new Error(result.message || 'Failed to submit feedback');
+                }
+            } catch (error) {
+                console.error('Feedback submission error:', error);
+                feedbackStatus.className = 'feedback-status error';
+                feedbackStatus.textContent = 'Error submitting feedback. Please try again.';
+            }
+        });
+    }
+
+    // QR Code Modal Functionality
+    setupQRCode() {
+        const qrBtn = document.getElementById('qr-code-btn');
+        const qrModal = document.getElementById('qr-code-modal');
+        const closeQrModal = document.getElementById('close-qr-modal');
+        const qrCodeContainer = document.getElementById('qrcode');
+        let qrCodeGenerated = false;
+
+        // Open QR Code Modal
+        if (qrBtn) {
+            qrBtn.addEventListener('click', () => {
+                qrModal.style.display = 'flex';
+                
+                // Generate QR code only once
+                if (!qrCodeGenerated && typeof QRCode !== 'undefined') {
+                    qrCodeContainer.innerHTML = ''; // Clear any existing content
+                    new QRCode(qrCodeContainer, {
+                        text: 'https://kineticdirt.github.io/personal_portfolio/',
+                        width: 256,
+                        height: 256,
+                        colorDark: '#ffffff',
+                        colorLight: '#1a1a2e',
+                        correctLevel: QRCode.CorrectLevel.H
+                    });
+                    qrCodeGenerated = true;
+                }
+            });
+        }
+
+        // Close QR Code Modal
+        if (closeQrModal) {
+            closeQrModal.addEventListener('click', () => {
+                qrModal.style.display = 'none';
+            });
+        }
+
+        // Close modal when clicking outside
+        if (qrModal) {
+            qrModal.addEventListener('click', (e) => {
+                if (e.target === qrModal) {
+                    qrModal.style.display = 'none';
+                }
+            });
+        }
+    }
 }
 
 // Greeting function (preserved from original for GitHub Actions)
@@ -997,12 +1263,69 @@ document.addEventListener("DOMContentLoaded", () => {
     window.portfolioApp = new PortfolioApp();
     console.log(greet("Abhinav"));
     
-    document.body.style.opacity = "0";
-    document.body.style.transition = "opacity 0.5s ease";
+    // Cycle through all loading GIFs
+    const loadingGifs = [
+        'assets/images/loading.gif',
+        'assets/images/loading-dots.gif',
+        'assets/images/loading-spiral.gif',
+        'assets/images/loading-rectangles.gif',
+        'assets/images/loading-texture.gif',
+        'assets/images/loading-halftone.gif',
+        'assets/images/loading-sphere.gif'
+    ];
     
-    setTimeout(() => {
-        document.body.style.opacity = "1";
-    }, 100);
+    const loadingGifElement = document.querySelector('.loading-gif');
+    const loadingScreen = document.getElementById('loading-screen');
+    
+    if (loadingGifElement) {
+        let currentGifIndex = 0;
+        
+        // Set initial GIF
+        loadingGifElement.src = loadingGifs[currentGifIndex];
+        
+        // Cycle through GIFs every 2 seconds (approximate GIF loop time)
+        const gifCycleInterval = setInterval(() => {
+            currentGifIndex = (currentGifIndex + 1) % loadingGifs.length;
+            loadingGifElement.src = loadingGifs[currentGifIndex];
+            
+            // Add a subtle fade effect for smoother transition
+            loadingGifElement.style.opacity = '0';
+            setTimeout(() => {
+                loadingGifElement.style.opacity = '1';
+            }, 50);
+        }, 2000); // Change GIF every 2 seconds
+        
+        // Hide loading screen after cycling through all GIFs at least once
+        const totalLoadingTime = loadingGifs.length * 2000; // 2 seconds per GIF
+        const minLoadingTime = Math.max(3000, totalLoadingTime); // At least 3 seconds
+        
+        setTimeout(() => {
+            clearInterval(gifCycleInterval);
+            if (loadingScreen) {
+                loadingScreen.classList.add('hidden');
+                // Remove from DOM after transition
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 500);
+            }
+        }, minLoadingTime);
+    } else {
+        // Fallback if loading elements don't exist
+        setTimeout(() => {
+            if (loadingScreen) {
+                loadingScreen.classList.add('hidden');
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 500);
+            }
+        }, 1500);
+    }
+    
+    // Add staggered animation to project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card, index) => {
+        card.style.setProperty('--card-index', index);
+    });
 });
 
 // Export for module systems (preserved from original)

@@ -5,6 +5,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
 import emailRouter from './endpoints/email.js';
+import feedbackRouter from './endpoints/feedback.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,8 +25,9 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 // Serve static files from the root directory
 app.use(express.static(path.join(__dirname, '..')));
 
-// Email API Routes
+// API Routes
 app.use('/api/email', emailRouter);
+app.use('/api/feedback', feedbackRouter);
 
 // API Routes
 app.get('/api/health', (req, res) => {

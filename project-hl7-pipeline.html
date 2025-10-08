@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HL7 Clinical Data Pipeline | Abhinav Allam</title>
+    <meta name="description" content="High-performance HL7 data transformation with AI-powered report generation">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <img src="assets/images/loading.gif" alt="Loading..." class="loading-gif">
+            <h2 class="loading-text">Loading Project Details</h2>
+            <div class="loading-bar"><div class="loading-progress"></div></div>
+        </div>
+    </div>
+    <nav class="navbar" role="navigation"><div class="nav-container"><div class="nav-brand"><a href="index.html" class="brand-link"><span class="brand-text">Abhinav Allam</span></a></div><ul class="nav-menu"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="index.html#projects" class="nav-link active">Projects</a></li><li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li></ul><div class="nav-controls"><button id="qr-code-btn" class="qr-code-toggle"><i class="fas fa-qrcode"></i></button><button class="theme-toggle"><i class="fas fa-moon"></i></button><button class="mobile-menu-toggle"><span class="hamburger"></span></button></div></div></nav>
+    <main class="main-content project-detail-page">
+        <section class="project-hero">
+            <div class="project-hero-background" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.3) 0%, rgba(147, 51, 234, 0.3) 100%), url('assets/images/glass-8858516_1280.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="container"><div class="project-hero-content"><div class="project-breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><a href="index.html#projects">Projects</a><i class="fas fa-chevron-right"></i><span>HL7 Pipeline</span></div><h1 class="project-hero-title">HL7 Clinical Data Pipeline</h1><p class="project-hero-subtitle">Healthcare Data Transformation & AI-Powered Report Generation</p><div class="project-hero-meta"><span class="meta-item"><i class="fas fa-building"></i> Healthy Vibes</span><span class="meta-item"><i class="fas fa-calendar"></i> 2024</span><span class="meta-item"><i class="fas fa-check-circle"></i> Production</span></div></div></div>
+        </section>
+        <section class="project-section">
+            <div class="container"><div class="project-content-grid"><div class="project-main-content"><h2>Project Overview</h2><p>Developed enterprise-grade <strong>HL7 scraper in Python</strong> to parse and transform legacy clinical data into structured JSON format. Engineered robust AIJsonToPDF utility that automatically generates human-readable clinical reports from AI model outputs, reducing manual report creation time from <strong>15 minutes to under 2 seconds</strong>—a 450x performance improvement.</p><h3>Challenge</h3><p>Healthcare systems rely on legacy HL7 messaging standards, making data integration with modern AI/ML pipelines difficult. Manual clinical report generation was time-consuming and error-prone, creating bottlenecks in patient care workflows.</p><h3>Solution</h3><p>Built high-performance data transformation pipeline that automatically converts HL7 messages to JSON, processes them through AI models, and generates professional PDF reports. The system seamlessly integrates with modern analytics pipelines for real-time patient data processing.</p><h3>Key Features</h3><ul><li><strong>HL7 to JSON Conversion:</strong> Enterprise-grade parser handling all HL7 message types</li><li><strong>AI-Powered PDF Generation:</strong> Automated report creation from AI outputs</li><li><strong>450x Performance Gain:</strong> Report generation from 15 minutes to 2 seconds</li><li><strong>Real-time Processing:</strong> Seamless integration with modern healthcare systems</li><li><strong>Production Deployment:</strong> Handling thousands of clinical transactions daily</li></ul><h3>Technical Stack</h3><ul><li><strong>Python:</strong> Core data processing and transformation logic</li><li><strong>HL7 Protocol:</strong> Healthcare messaging standard implementation</li><li><strong>Claude 3.5 API:</strong> AI-powered report generation and analysis</li><li><strong>PDF Generation:</strong> Automated document creation pipeline</li><li><strong>GCP Integration:</strong> Cloud-based testing and deployment</li></ul><h3>Impact</h3><p>Transformed healthcare data workflows by eliminating manual data entry and report generation bottlenecks. The system enables real-time clinical decision support and significantly improves patient care efficiency.</p></div><div class="project-sidebar"><div class="sidebar-card"><h3>Technologies</h3><div class="tech-list"><span class="tech-badge">Python</span><span class="tech-badge">HL7</span><span class="tech-badge">Claude API</span><span class="tech-badge">PDF Gen</span><span class="tech-badge">GCP</span><span class="tech-badge">Healthcare</span></div></div><div class="sidebar-card"><h3>Stats</h3><div class="stat-list"><div class="stat-item"><span class="stat-label">Speed Gain</span><span class="stat-value">450x</span></div><div class="stat-item"><span class="stat-label">Status</span><span class="stat-value">Production</span></div></div></div></div></div></div>
+        </section>
+    </main>
+    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-text"><p>&copy; 2025 Abhinav Allam. Built with passion and modern web technologies.</p></div><div class="footer-links"><a href="https://github.com/kineticdirt" target="_blank" rel="noopener"><i class="fab fa-github"></i></a><a href="mailto:abhinav.allam@abhinavall.net"><i class="fas fa-envelope"></i></a></div></div></div></footer>
+    <div id="qr-code-modal" class="admin-modal" style="display: none;"><div class="admin-modal-content qr-modal-content"><div class="admin-modal-header"><h3>Resume Downloads</h3><button id="close-qr-modal" class="admin-close">&times;</button></div><div class="admin-modal-body qr-modal-body"><p class="qr-description">Scan this QR code to access my resume downloads page</p><div id="qrcode" class="qr-code-container"></div><div class="qr-link-container"><p class="qr-url">https://kineticdirt.github.io/personal_portfolio/</p><a href="https://kineticdirt.github.io/personal_portfolio/" target="_blank" rel="noopener" class="btn btn-primary"><span>Visit Resume Page</span><i class="fas fa-external-link-alt"></i></a></div></div></div></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

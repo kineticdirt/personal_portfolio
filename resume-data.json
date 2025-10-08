@@ -1,0 +1,243 @@
+Extracted Resume Data: {
+  "personalInfo": {
+    "name": "Abhinav Allam",
+    "email": "abhinavallo123@gmail.com",
+    "phone": "510-890-8272",
+    "location": "Fremont, CA",
+    "linkedin": "Abhinav Allam",
+    "github": "github.com/kineticdirt"
+  },
+  "summary": "Dynamic, detail-oriented professional with proven ability to excel under pressure through strong problem-solving, troubleshooting, and communication. Passionate about continuous learning, improving myself, and proactively contributing in collaborative environments.",
+  "experience": [
+    {
+      "title": "Mobile Development Engineer",
+      "company": "Celona, Inc.",
+      "location": "Cupertino, CA",
+      "startDate": "March 2025",
+      "endDate": "Current",
+      "description": null,
+      "achievements": [
+        "Utilized Kotlin (Android) and Swift (iOS) with geofencing APIs to develop advanced mobile applications, thereby enabling precise location-based data services and enhanced user experience for enterprise clients.",
+        "Leveraged Celona's internal APIs and explored SIM and 5G-related technologies to implement robust connectivity solutions, resulting in optimized network performance and streamlined device management within private mobile networks.",
+        "Engineered and deployed custom RESTful APIs using Firebase to enable seamless data synchronization and real-time communication between mobile application and backend services."
+      ],
+      "projects": [],
+      "technologies": [
+        "Kotlin",
+        "Android",
+        "Swift",
+        "iOS",
+        "Firebase"
+      ]
+    },
+    {
+      "title": "Member of Technical Staff",
+      "company": "Healthy Vibes",
+      "location": "Remote",
+      "startDate": "November 2024",
+      "endDate": "February 2025",
+      "description": null,
+      "achievements": [
+        "Developed a headless Android app to manage devices and achieve robust Linux sync, via integration with Zoll devices.",
+        "Automated ASP.NET API calls and built Python scripts for real-time integration testing, via custom scripting on Google Cloud Platform.",
+        "Created an Agentic model prototype to auto-generate and test code, via integration with the Claude 3.5 Haiku API.",
+        "Developed a high-performance HL7 scraper in Python to parse and transform legacy clinical data into a structured JSON format, enabling its use in modern Al and analytics pipelines.",
+        "Engineered a robust AlJsonToPDF utility to automatically generate human-readable clinical reports from model outputs, reducing manual report creation time from 15 minutes to under 2 seconds."
+      ],
+      "projects": [],
+      "technologies": [
+        "Android",
+        "Linux",
+        "ASP.NET",
+        "Python",
+        "Google Cloud Platform"
+      ]
+    },
+    {
+      "title": "AI Research Intern",
+      "company": "Support Vectors",
+      "location": "Fremont, CA",
+      "startDate": "November 2024",
+      "endDate": "January 2025",
+      "description": null,
+      "achievements": [
+        "Utilized Python, Langchain, and LlamaIndex to construct and refine multiple Retrieval-Augmented Generation (RAG) models, thereby enhancing information retrieval accuracy and the depth of contextual understanding for complex query processing.",
+        "Employed Python and the Anthropic API to advance the development of Staff Agentic Reasoning models, leading to improved autonomous decision-making capabilities and more efficient automation of complex analytical tasks."
+      ],
+      "projects": [],
+      "technologies": [
+        "Python",
+        "Langchain",
+        "LlamaIndex",
+        "Anthropic API"
+      ]
+    },
+    {
+      "title": "Data Science Intern",
+      "company": "Cequence Security, Inc.",
+      "location": "Sunnyvale, CA",
+      "startDate": "June 2023",
+      "endDate": "October 2023",
+      "description": null,
+      "achievements": [
+        "Developed and deployed a Time-Delta model to detect subtle bot patterns, via PyTorch with CUDA.",
+        "Engineered preprocessing and feature extraction to lift accuracy from 18% to 32%, via Pandas, NumPy, cross-validation, and hyperparameter tuning.",
+        "Automated daily reporting by compiling XML test results and reducing manual effort by 50%, via streamlined scripting and Google Cloud integration.",
+        "Developed a visual testing framework in Python, leveraging Appium for automated UI navigation and the Pillow/pixelmatch libraries for pixel-level screenshot comparison to safeguard mobile UI integrity.",
+        "Engineered an automated quality gate that guaranteed design fidelity by catching visual regressions before release, reducing manual design review time by 100% for all covered screens."
+      ],
+      "projects": [],
+      "technologies": [
+        "PyTorch",
+        "CUDA",
+        "Pandas",
+        "NumPy",
+        "Python",
+        "Appium",
+        "Pillow",
+        "pixelmatch",
+        "Google Cloud"
+      ]
+    },
+    {
+      "title": "App Development Intern",
+      "company": "Celona, Inc.",
+      "location": "Cupertino, CA",
+      "startDate": "June 2022",
+      "endDate": "September 2022",
+      "description": null,
+      "achievements": [
+        "Developed an Android app to streamline Celona 5G Access Point installs and cut setup time by 24%, via Kotlin and Android Studio.",
+        "Conducted requirements analysis, drafted UML diagrams, and integrated access point settings with secure OAuth2 authentication, via REST API integration.",
+        "Added a QR/barcode scanning feature to automate data capture and boost productivity by 23%, via the ZXing library."
+      ],
+      "projects": [],
+      "technologies": [
+        "Android",
+        "Kotlin",
+        "Android Studio",
+        "REST API",
+        "ZXing"
+      ]
+    },
+    {
+      "title": "Software Intern",
+      "company": "Stealth Security, Inc.",
+      "location": "Sunnyvale, CA",
+      "startDate": "June 2021",
+      "endDate": "September 2021",
+      "description": null,
+      "achievements": [
+        "Developed a JavaScript app to auto-extract data from Swagger specs and support Bot Defense, via custom parsing logic.",
+        "Automated JSON pointer generation to achieve a 12% faster setup time for new clients, via precise algorithmic extraction.",
+        "Built a React UI and adopted agile practices to streamline configuration, via NodeJS REST APIs, Git, and JIRA.",
+        "Architected a microservices-based application by developing a Python worker service to handle compute-intensive image processing, offloading tasks from the primary Node.js / Express API.",
+        "Improved main API responsiveness by 40% by isolating long-running tasks, ensuring the Node.js event loop remained non-blocking and available to serve user requests."
+      ],
+      "projects": [],
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Express",
+        "Python",
+        "Git",
+        "JIRA"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Sc. in Computer Science",
+      "institution": "University of California, Riverside",
+      "location": "Riverside, CA",
+      "graduationDate": "June 2024",
+      "gpa": null,
+      "relevantCoursework": []
+    },
+    {
+      "degree": "AI Research Intern",
+      "institution": "Continuing Education: Support Vectors",
+      "location": "Fremont, CA",
+      "graduationDate": "January 2025",
+      "gpa": null,
+      "relevantCoursework": []
+    }
+  ],
+  "skills": {
+    "programming": [
+      "Java",
+      "Kotlin",
+      "Python",
+      "JavaScript",
+      "C/C++",
+      "Scala",
+      "TypeScript",
+      "Android Development",
+      "iOS Development",
+      "Firebase",
+      "Node.js",
+      "Flask",
+      "Spring Boot",
+      "RESTful APIs",
+      "Microservices"
+    ],
+    "frameworks": [
+      "Flask",
+      "Spring Boot",
+      "Node.js",
+      "Express",
+      "React"
+    ],
+    "tools": [
+      "Google Cloud Platform (GCP)",
+      "AWS EC2",
+      "Docker",
+      "Kubernetes",
+      "Git",
+      "Postman",
+      "Gradle",
+      "Maven",
+      "IDE's",
+      "Agile",
+      "Kanban",
+      "Scrum"
+    ],
+    "databases": [
+      "SQL",
+      "SQLite3",
+      "Postgres",
+      "Elasticsearch",
+      "Amazon Athena"
+    ],
+    "cloud": [
+      "Google Cloud Platform (GCP)",
+      "AWS EC2"
+    ]
+  },
+  "projects": [
+    {
+      "name": "EQUALITY EYE",
+      "description": "Developed EQUALITY EYE to detect hate speech and secure first place (Social Impact), via Al-driven analysis.",
+      "technologies": [
+        "Google BERT",
+        "Python",
+        "Machine Learning"
+      ],
+      "github": null,
+      "liveDemo": null
+    },
+    {
+      "name": "AI chatbot",
+      "description": "Developed an Al chatbot to simplify user interactions and secure second place, via integration with Cequence's UAP Platform.",
+      "technologies": [
+        "Java",
+        "C/C++",
+        "LLM"
+      ],
+      "github": null,
+      "liveDemo": null
+    }
+  ],
+  "certifications": []
+}

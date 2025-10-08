@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot - Cequence UAP Platform | Abhinav Allam</title>
+    <meta name="description" content="Intelligent conversational interface for Cequence Security's UAP Platform">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <img src="assets/images/loading.gif" alt="Loading..." class="loading-gif">
+            <h2 class="loading-text">Loading Project Details</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <span class="brand-text">Abhinav Allam</span>
+                </a>
+            </div>
+            <ul class="nav-menu" role="menubar">
+                <li class="nav-item" role="none">
+                    <a href="index.html" class="nav-link" role="menuitem">Home</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="index.html#projects" class="nav-link active" role="menuitem">Projects</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="index.html#contact" class="nav-link" role="menuitem">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <button id="qr-code-btn" class="qr-code-toggle" aria-label="View Resume QR Code">
+                    <i class="fas fa-qrcode"></i>
+                </button>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content project-detail-page">
+        <section class="project-hero">
+            <div class="project-hero-background" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(59, 130, 246, 0.3) 100%), url('assets/images/ai-generated-9023805_1280.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="container">
+                <div class="project-hero-content">
+                    <div class="project-breadcrumb">
+                        <a href="index.html">Home</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="index.html#projects">Projects</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>AI Chatbot</span>
+                    </div>
+                    <h1 class="project-hero-title">AI Chatbot Platform</h1>
+                    <p class="project-hero-subtitle">Intelligent Conversational Interface for Enterprise Security</p>
+                    <div class="project-hero-meta">
+                        <span class="meta-item"><i class="fas fa-medal"></i> 2nd Place - Cequence Hackathon</span>
+                        <span class="meta-item"><i class="fas fa-calendar"></i> 2023</span>
+                        <span class="meta-item"><i class="fas fa-building"></i> Cequence Security</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <div class="project-content-grid">
+                    <div class="project-main-content">
+                        <h2>Project Overview</h2>
+                        <p>
+                            Developed an intelligent AI-driven chatbot to simplify user interactions with Cequence Security's 
+                            Unified API Protection (UAP) Platform. This project secured <strong>second place</strong> in the 
+                            Cequence Hackathon by demonstrating how conversational AI can dramatically improve enterprise 
+                            software usability and efficiency.
+                        </p>
+
+                        <h3>Challenge</h3>
+                        <p>
+                            Enterprise security platforms are often complex, requiring extensive training for users to navigate 
+                            effectively. The UAP Platform, while powerful, needed a more intuitive interface to help users 
+                            quickly access information and perform tasks without deep knowledge of the system's architecture.
+                        </p>
+
+                        <h3>Solution</h3>
+                        <p>
+                            I designed and implemented a conversational AI interface that leverages Natural Language Processing (NLP) 
+                            and Large Language Model (LLM) backends to understand user intent and provide intelligent responses. 
+                            The chatbot acts as a virtual assistant, guiding users through complex workflows and answering 
+                            questions in natural language.
+                        </p>
+
+                        <h3>Technical Implementation</h3>
+                        <h4>Core Technologies</h4>
+                        <ul>
+                            <li><strong>Java & C/C++:</strong> Backend services for high-performance processing</li>
+                            <li><strong>LLM Integration:</strong> Connected to large language model backends for natural language understanding</li>
+                            <li><strong>NLP Techniques:</strong> Intent classification, entity extraction, and context management</li>
+                            <li><strong>API Integration:</strong> Seamless connection with Cequence's UAP Platform APIs</li>
+                        </ul>
+
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>Natural language query processing for platform navigation</li>
+                            <li>Contextual awareness for multi-turn conversations</li>
+                            <li>Intelligent task automation based on user requests</li>
+                            <li>Real-time response generation with low latency</li>
+                            <li>Integration with existing security workflows</li>
+                        </ul>
+
+                        <h3>Development Process</h3>
+                        <p>
+                            The project was prototyped rapidly during the hackathon, with iterative testing and refinement based 
+                            on user feedback. I researched various NLP approaches and selected techniques that balanced accuracy 
+                            with performance, ensuring the chatbot could handle production-level traffic.
+                        </p>
+
+                        <h3>Results & Impact</h3>
+                        <ul>
+                            <li><strong>2nd Place Award</strong> in the Cequence Hackathon competition</li>
+                            <li>Streamlined navigation reducing user onboarding time</li>
+                            <li>Boosted operational efficiency through task automation</li>
+                            <li>Demonstrated viability of AI-assisted security platform management</li>
+                            <li>Positive feedback from security professionals and stakeholders</li>
+                        </ul>
+
+                        <h3>Lessons Learned</h3>
+                        <p>
+                            This project reinforced the importance of user-centered design in enterprise software. By focusing on 
+                            actual user pain points and building a solution that felt natural and intuitive, we created a tool 
+                            that significantly improved the user experience while maintaining the robust security features of 
+                            the underlying platform.
+                        </p>
+                    </div>
+
+                    <div class="project-sidebar">
+                        <div class="sidebar-card">
+                            <h3>Technologies Used</h3>
+                            <div class="tech-list">
+                                <span class="tech-badge">Java</span>
+                                <span class="tech-badge">C/C++</span>
+                                <span class="tech-badge">LLM</span>
+                                <span class="tech-badge">NLP</span>
+                                <span class="tech-badge">API Integration</span>
+                                <span class="tech-badge">Backend Development</span>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Project Stats</h3>
+                            <div class="stat-list">
+                                <div class="stat-item">
+                                    <span class="stat-label">Award</span>
+                                    <span class="stat-value">2nd Place</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Year</span>
+                                    <span class="stat-value">2023</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Category</span>
+                                    <span class="stat-value">Hackathon</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Company</h3>
+                            <p class="team-description">
+                                Developed for Cequence Security, Inc., a leader in API security and bot management solutions 
+                                protecting enterprises from automated threats.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-projects-section">
+            <div class="container">
+                <h2 class="section-title">Related Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%), url('assets/images/ai-generated-8993116_1280.jpg'); background-size: cover;">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="project-equality-eye.html" class="project-link"><i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">EQUALITY EYE</h3>
+                            <p class="project-description">AI-driven hate speech detection with 94% accuracy</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(251, 146, 60, 0.2) 100%), url('assets/images/ai-generated-8672811_1280.jpg'); background-size: cover;">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="project-bot-detection.html" class="project-link"><i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Bot Detection Model</h3>
+                            <p class="project-description">Time-delta ML model for detecting bot patterns</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Abhinav Allam. Built with passion and modern web technologies.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/kineticdirt" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="mailto:abhinav.allam@abhinavall.net"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="qr-code-modal" class="admin-modal" style="display: none;">
+        <div class="admin-modal-content qr-modal-content">
+            <div class="admin-modal-header">
+                <h3>Resume Downloads</h3>
+                <button id="close-qr-modal" class="admin-close">&times;</button>
+            </div>
+            <div class="admin-modal-body qr-modal-body">
+                <p class="qr-description">Scan this QR code to access my resume downloads page</p>
+                <div id="qrcode" class="qr-code-container"></div>
+                <div class="qr-link-container">
+                    <p class="qr-url">https://kineticdirt.github.io/personal_portfolio/</p>
+                    <a href="https://kineticdirt.github.io/personal_portfolio/" target="_blank" rel="noopener" class="btn btn-primary">
+                        <span>Visit Resume Page</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
