@@ -229,7 +229,6 @@ class PortfolioApp {
     setupScrollSpy() {
         const sections = document.querySelectorAll("section[id]");
         if (!sections.length) return;
-        const sections = document.querySelectorAll("section[id]");
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
