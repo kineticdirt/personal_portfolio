@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HL7 Clinical Data Pipeline | Abhinav Allam</title>
+    <meta name="description" content="High-performance HL7 data transformation pipeline with AI-powered report generation">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <img src="assets/images/loading.gif" alt="Loading..." class="loading-gif">
+            <h2 class="loading-text">Loading Project Details</h2>
+            <div class="loading-bar"><div class="loading-progress"></div></div>
+        </div>
+    </div>
+    <nav class="navbar" role="navigation"><div class="nav-container"><div class="nav-brand"><a href="index.html" class="brand-link"><span class="brand-text">Abhinav Allam</span></a></div><ul class="nav-menu" role="menubar"><li class="nav-item" role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li><li class="nav-item" role="none"><a href="index.html#projects" class="nav-link active" role="menuitem">Projects</a></li><li class="nav-item" role="none"><a href="index.html#contact" class="nav-link" role="menuitem">Contact</a></li></ul><div class="nav-controls"><button id="qr-code-btn" class="qr-code-toggle" aria-label="View Resume QR Code"><i class="fas fa-qrcode"></i></button><button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button><button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span class="hamburger"></span></button></div></div></nav>
+    <main class="main-content project-detail-page">
+        <section class="project-hero">
+            <div class="project-hero-background" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(219, 39, 119, 0.3) 100%), url('assets/images/computer-4405766_1280.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="container"><div class="project-hero-content"><div class="project-breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><a href="index.html#projects">Projects</a><i class="fas fa-chevron-right"></i><span>RAG Models</span></div><h1 class="project-hero-title">HL7 Clinical Data Pipeline</h1><p class="project-hero-subtitle">Healthcare Data Transformation & AI Report Generation</p><div class="project-hero-meta"><span class="meta-item"><i class="fas fa-building"></i> Healthy Vibes</span><span class="meta-item"><i class="fas fa-calendar"></i> 2024</span><span class="meta-item"><i class="fas fa-flask"></i> Production</span></div></div></div>
+        </section>
+        <section class="project-section">
+            <div class="container"><div class="project-content-grid"><div class="project-main-content"><h2>Project Overview</h2><p>Constructed and refined multiple Retrieval-Augmented Generation (RAG) models using <strong>Python, Langchain, and LlamaIndex</strong>, achieving significant enhancements in information retrieval accuracy and contextual understanding for complex query processing across diverse knowledge domains.</p><h3>Technologies & Frameworks</h3><ul><li><strong>Langchain:</strong> Framework for building LLM-powered applications with advanced chaining capabilities</li><li><strong>LlamaIndex:</strong> Data framework for LLM applications with sophisticated indexing and retrieval</li><li><strong>Vector Databases:</strong> High-performance semantic search and similarity matching</li><li><strong>Anthropic Claude:</strong> State-of-the-art LLM backend for agentic reasoning</li></ul><h3>RAG Architecture Development</h3><p>Developed multi-model RAG systems that combine the power of large language models with domain-specific knowledge retrieval. Implemented advanced vector embedding techniques to enable semantic search capabilities, significantly improving document retrieval relevance through optimized embedding models and similarity metrics.</p><h3>Agentic AI Systems</h3><p>Designed and implemented <strong>Staff Agentic Reasoning models</strong> leveraging Python and the Anthropic Claude API. These autonomous AI agents demonstrate improved decision-making capabilities and enable efficient automation of complex analytical tasks in enterprise environments. Created tool-augmented language model architectures that allow AI agents to interact with external APIs, databases, and computational tools.</p><h3>Production & Deep Learning</h3><p>Completed rigorous training in neural networks, LLMs, and generative AI, building expertise in CNNs, RNNs, Transformers, GANs, and Diffusion Models through hands-on research projects. Applied advanced techniques including back-propagation, regularization, and hyperparameter tuning to optimize model performance.</p><h3>Key Achievements</h3><ul><li>Significant improvements in retrieval accuracy and contextual understanding</li><li>Autonomous AI agents with external tool integration capabilities</li><li>Production-ready RAG architectures for enterprise knowledge systems</li><li>Advanced research in modern AI/ML architectures and techniques</li></ul></div><div class="project-sidebar"><div class="sidebar-card"><h3>Technologies Used</h3><div class="tech-list"><span class="tech-badge">Python</span><span class="tech-badge">Langchain</span><span class="tech-badge">LlamaIndex</span><span class="tech-badge">RAG</span><span class="tech-badge">Claude API</span><span class="tech-badge">Vector DB</span><span class="tech-badge">LLMs</span></div></div><div class="sidebar-card"><h3>Project Stats</h3><div class="stat-list"><div class="stat-item"><span class="stat-label">Status</span><span class="stat-value">Production</span></div><div class="stat-item"><span class="stat-label">Company</span><span class="stat-value">Healthy Vibes</span></div></div></div></div></div></div>
+        </section>
+    </main>
+    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-text"><p>&copy; 2025 Abhinav Allam. Built with passion and modern web technologies.</p></div><div class="footer-links"><a href="https://github.com/kineticdirt" target="_blank" rel="noopener"><i class="fab fa-github"></i></a><a href="mailto:abhinav.allam@abhinavall.net"><i class="fas fa-envelope"></i></a></div></div></div></footer>
+    <div id="qr-code-modal" class="admin-modal" style="display: none;"><div class="admin-modal-content qr-modal-content"><div class="admin-modal-header"><h3>Resume Downloads</h3><button id="close-qr-modal" class="admin-close">&times;</button></div><div class="admin-modal-body qr-modal-body"><p class="qr-description">Scan this QR code to access my resume downloads page</p><div id="qrcode" class="qr-code-container"></div><div class="qr-link-container"><p class="qr-url">https://kineticdirt.github.io/personal_portfolio/</p><a href="https://kineticdirt.github.io/personal_portfolio/" target="_blank" rel="noopener" class="btn btn-primary"><span>Visit Resume Page</span><i class="fas fa-external-link-alt"></i></a></div></div></div></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
