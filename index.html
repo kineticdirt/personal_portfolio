@@ -15,7 +15,7 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
@@ -202,6 +202,32 @@
             color: var(--text-secondary);
         }
 
+        .resume-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .view-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .view-btn:hover {
+            border-color: var(--accent-primary);
+            background: var(--bg-card);
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px var(--glow);
+        }
+
         .download-btn {
             display: inline-flex;
             align-items: center;
@@ -278,6 +304,16 @@
                 gap: 1rem;
                 text-align: center;
             }
+
+            .resume-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .view-btn, .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -300,8 +336,8 @@
                     <i class="fas fa-envelope"></i>
                     Email
                 </a>
-            </div>
-        </div>
+                </div>
+                </div>
 
         <div class="section">
             <h2 class="section-title">
@@ -314,21 +350,33 @@
                         <h3>AI/ML Focused Resume</h3>
                         <p>Detailed version highlighting machine learning and artificial intelligence projects</p>
                     </div>
-                    <a href="assets/documents/Resume_AI_ML.pdf" download="Abhinav_Allam_Resume_AI_ML.pdf" class="download-btn">
-                        <i class="fas fa-download"></i>
-                        Download
-                    </a>
-                </div>
-                
+                    <div class="resume-actions">
+                        <a href="assets/documents/Resume_AI_ML.pdf" target="_blank" rel="noopener noreferrer" class="view-btn">
+                            <i class="fas fa-eye"></i>
+                            View
+                        </a>
+                        <a href="assets/documents/Resume_AI_ML.pdf" download="Abhinav_Allam_Resume_AI_ML.pdf" class="download-btn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                        </div>
+                    </div>
+
                 <div class="resume-card">
                     <div class="resume-info">
                         <h3>Detailed AI/ML Resume</h3>
                         <p>Extended version with comprehensive project details and technical depth</p>
                     </div>
-                    <a href="assets/documents/Resume_AI_ML_DETAIL.pdf" download="Abhinav_Allam_Resume_Detailed.pdf" class="download-btn">
-                        <i class="fas fa-download"></i>
-                        Download
-                    </a>
+                    <div class="resume-actions">
+                        <a href="assets/documents/Resume_AI_ML_DETAIL.pdf" target="_blank" rel="noopener noreferrer" class="view-btn">
+                            <i class="fas fa-eye"></i>
+                            View
+                        </a>
+                        <a href="assets/documents/Resume_AI_ML_DETAIL.pdf" download="Abhinav_Allam_Resume_Detailed.pdf" class="download-btn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="resume-card">
@@ -336,19 +384,25 @@
                         <h3>Extended AI/ML Resume (V4)</h3>
                         <p>Latest version with updated experience and recent achievements</p>
                     </div>
-                    <a href="assets/documents/Resume_AI_ML_V4_Large.pdf" download="Abhinav_Allam_Resume_V4.pdf" class="download-btn">
-                        <i class="fas fa-download"></i>
-                        Download
+                    <div class="resume-actions">
+                        <a href="assets/documents/Resume_AI_ML_V4_Large.pdf" target="_blank" rel="noopener noreferrer" class="view-btn">
+                            <i class="fas fa-eye"></i>
+                            View
+                        </a>
+                        <a href="assets/documents/Resume_AI_ML_V4_Large.pdf" download="Abhinav_Allam_Resume_V4.pdf" class="download-btn">
+                            <i class="fas fa-download"></i>
+                            Download
                     </a>
                 </div>
             </div>
         </div>
+    </div>
 
         <div class="section">
             <div class="cta-section">
                 <h3>View Full Portfolio</h3>
                 <p>Explore my complete project portfolio, work experience, and technical skills</p>
-                <a href="https://kineticdirt.github.io/personal_portfolio/" target="_blank" rel="noopener noreferrer" class="primary-btn">
+                <a href="https://kineticdirt.github.io/LinuxBoxPortfolio/" target="_blank" rel="noopener noreferrer" class="primary-btn">
                     <i class="fas fa-briefcase"></i>
                     View Portfolio
                 </a>
