@@ -1295,9 +1295,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 50);
         }, 2000); // Change GIF every 2 seconds
         
-        // Hide loading screen after cycling through all GIFs at least once
-        const totalLoadingTime = loadingGifs.length * 2000; // 2 seconds per GIF
-        const minLoadingTime = Math.max(3000, totalLoadingTime); // At least 3 seconds
+        // Hide loading screen after a brief time (1.5 seconds)
+        const minLoadingTime = 1500; // Quick load for better UX
         
         setTimeout(() => {
             clearInterval(gifCycleInterval);
@@ -1328,6 +1327,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Export for module systems (preserved from original)
-module.exports = { greet, PortfolioApp };
+// Export for module systems (only in Node.js environment)
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { greet, PortfolioApp };
+}
   
